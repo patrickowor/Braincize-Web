@@ -1,0 +1,181 @@
+/* Base styles - Mobile First (default) */
+.wrapper {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 97%;
+    background-color: #cae4ff93;
+}
+
+
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+
+.HeaderParent {
+    position: relative;
+}
+.HeaderAppLogo{
+    position: relative !important;
+    width: 81.49px !important;
+    height: 65.2px !important;
+}
+
+
+
+.pcNav {
+    min-width: 60%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.mobileNav  {
+    display: none;
+    color: white;
+}
+.mobileNavSpan{
+    display: none;
+}
+
+.NavLinkBigScreens {
+    display: none;
+    gap: 10px;
+    padding-left: 10%;
+    margin-inline: 20px;
+}
+
+
+.headerAuthBtnsParent{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.signup{
+    background-color: #1886F4;
+}
+.signup:hover{
+    background-color: #0e64b9;
+}
+
+.login{
+    display: none;
+    color: #040A40;
+    border: #040a4088 solid 1px;
+    background-color: #0e63b900;
+}
+.login:hover {
+    background-color: #0e63b949;
+    border-color: aliceblue;
+}
+
+
+
+
+/* exclusive to small screens  */
+@media (max-width: 599.9px){
+    .signup{
+        padding-inline: 10px;
+        padding-block: 5px;
+        font-size: medium;
+    }
+    .mobileNav  {
+        display: block;
+    }
+    .mobileNavSpan  {
+        display: flex;
+        background-color: #0b1bacef;
+        color: white;
+        margin-left: 3%;
+        padding-right: 3%;
+        padding-left: 1%;
+        padding-block: 3px;
+        border-radius:5px;
+        width: max-content;
+    }
+
+    .mobileNavSpan:hover{
+        background-color: #040A40;
+    }
+
+    .mobileNavItems {
+        display: flex;
+        flex-direction: column;
+        padding-inline: 10px;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 70vh;
+        max-height: 80vh;
+        padding-bottom: 20px;
+    }
+
+    .mobileNavItems > *:hover {
+        box-shadow:   5px 5px 10px rgba(21, 5, 163, 0.3), -5px -5px 10px rgba(21, 5, 163, 0.3);
+    }
+}
+
+
+/* Tablet (≥ 600px) */
+@media (min-width: 600px) {
+    .pcNav{
+        justify-content: space-between;
+    }
+    .mobileNav  {
+        display: none;
+    }
+    .NavLinkBigScreens {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .login{
+        display: inline-block;
+    }
+}
+
+/* Small Desktop (≥ 768px) */
+@media (min-width: 768px) {
+    .wrapper{
+        width: 98%;
+    }
+    .pcNav{
+        justify-content: flex-end;
+    }
+}
+
+/* Medium Desktop (≥ 992px) */
+@media (min-width: 992px) {
+  /* body {
+    font-size: 22px;
+    padding: 2.5rem;
+  } */
+}
+
+/* Large Desktop (≥ 1200px) */
+@media (min-width: 1200px) {
+  /* body {
+    font-size: 24px;
+    padding: 3rem;
+  } */
+}
+
+
+
+
+
+
+/* moderate size on largest screen */
+@media (min-width: 1441px) {
+  .wrapper {
+    margin-inline: 10%;
+    width: 79%;
+  }
+}

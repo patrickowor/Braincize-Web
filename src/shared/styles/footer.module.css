@@ -1,0 +1,122 @@
+.wrapper {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #040A40;
+    color: #ffffff;
+    font-size: xx-small;
+    padding-block: 10px;
+    /* font type poppins */
+}
+
+.footerLogoAndTextWrapper{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.FooterAppLogo{
+    position: relative !important;
+    width: 58.75px !important;
+    height: 47px !important;
+}
+
+.footerSupportEmail{
+    margin-left: 5% ;
+    display: flex;
+    flex-direction: column;
+}
+
+.quickLinksParentWrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 65% ;
+    margin-right: 5px;
+}
+
+.quickLinksWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.quickLinksdiv{
+    display: flex;
+    flex-direction: column !important;
+    justify-content: space-around;
+    height: 80px;
+}
+
+/* exclusive to small screens  */
+@media (max-width: 599.9px){
+    .Icons{
+        width: 20px !important;
+        height: 20px !important;
+    }
+}
+
+
+/* Tablet (≥ 600px) */
+@media (min-width: 600px) {
+    .footerLogoAndTextWrapper{
+        flex-direction: column;
+    }
+
+    .wrapper{
+        font-size: medium;
+        align-content: center;
+        height: 223.188px;
+    }
+
+    .FooterAppLogo{
+        width: 194px !important;
+        height: 155.20px !important;
+    }
+
+    .quickLinksParentWrapper{
+        margin-right: 20px;
+        margin-top: 5%;
+    }
+
+    .quickLinksdiv{
+        height: 120px;
+    }
+}
+
+/* Small Desktop (≥ 768px) */
+@media (min-width: 769px) {
+    .wrapper{
+        font-size: medium;
+    }
+    
+    .footerLogoAndTextWrapper{
+        flex-direction: row;
+        width: 40%;
+    }
+    
+    .FooterAppLogo{
+        width: 294.49px !important;
+        height: 235.6px !important;
+    }
+
+    .quickLinksParentWrapper{
+        margin-top: 2.5%;
+        width: 60%;
+        justify-content: space-around;
+    }
+
+    .footerSupportEmail {
+        margin-top: 6%;
+        gap: 15px;
+    }
+}
+
+/* Medium Desktop (≥ 992px) */
+@media (min-width: 992px) {
+
+}
+
+/* Large Desktop (≥ 1200px) */
+@media (min-width: 1200px) {
+
+}

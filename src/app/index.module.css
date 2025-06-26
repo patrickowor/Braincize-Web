@@ -1,0 +1,334 @@
+/* HomePage Component Styles */
+
+.homepage {
+    padding-top: 120px;
+    background-color: #e5effad8;
+}
+
+.homePageParent{
+    padding-left: 4%;
+}
+
+.homepageTextWrapper {
+    line-height: 44px;
+    letter-spacing: 2%;
+    font-weight: bolder;
+    font-size: 36px;
+
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 0px;
+}
+.homepageSubText {
+    line-height: 20px;
+    letter-spacing: -0.02%;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.exploreBtn{
+    background-color: #1886F4;
+    padding-block: 10px;
+    margin-left: 1%;
+    margin-top: 10px;
+}
+
+.exploreBtn:hover{
+    background-color: #0e64b9;
+}
+
+
+
+
+/* exclusive to small screens  */
+@media (max-width: 599.9px){
+    .homePageParent{
+        background-color: whitesmoke;
+        color: black;
+        width: 100% !important;
+    }
+
+    .HomePageImageDiv {
+        background-color: #CAE4FF;
+    }
+
+    .exploreBtnDiv{
+        display: flex;
+        justify-content: center;
+        
+    }
+    .exploreBtn{
+        margin-inline: 0px;
+        margin-bottom: 10px;
+    }
+}
+
+
+/* Tablet (≥ 600px) */
+@media (min-width: 600px) {
+    .homepage {
+        padding-top: 70px;
+        background-color: #CAE4FF;
+    }
+
+    .homepageStack{
+        position: relative;
+    }
+    .homePageParent{
+        padding-left: 20px;
+        /* position: absolute; */
+    }
+    .homepageTextWrapper {
+        line-height: 86px;
+        letter-spacing: 2%;
+        font-weight: bolder;
+        font-size: 56px;
+        margin-top: 10px;
+    }
+    .homepageSubText {
+        line-height: 26.8px;
+        letter-spacing: 0%;
+        font-weight: 500;
+        font-size: 26px;
+
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+
+    .HomePageImageDiv  {
+        position: absolute;
+        right: 0;
+        top: 10;
+        z-index: 2;
+        width: 500px;
+    }
+
+    .exploreBtn{
+        margin-left: 3%;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+}
+
+/* Small Desktop (≥ 768px) */
+@media (min-width: 769px) {
+    .homepageTextWrapper {
+        line-height: 120px;
+        letter-spacing: 4%;
+        font-weight: bold;
+        font-size: 96px;
+        margin-top: 20px;
+    }
+    .homepageSubText {
+        line-height: 46.8px;
+        letter-spacing: 0%;
+        font-weight: 500;
+        font-size: 36px;
+    }
+
+    .HomePageImageDiv  {
+        right: -4;
+        top: 40;
+        width: 630px;
+    }
+    .exploreBtn{
+        margin-left: 1.5%;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+}
+
+/* Large Desktop (≥ 1200px) */
+@media (min-width: 1200px) {
+    .HomePageImageDiv  {
+        right: 0;
+        top: 25;
+        width: 750px;
+    }
+}
+
+/* Custom Desktop (≥ 1350px) */
+@media (min-width: 1349px) {
+    .HomePageImageDiv  {
+        right: -19;
+        top: -35;
+        width: 910px;
+    }
+}
+
+
+/* What is Braincize */
+.WhatisSection{
+    background-color: white;
+    color: black;
+    padding-block: 30px;
+}
+
+.WhatisHeader{
+    font-weight: bolder;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0px;
+    padding: 5px;
+}
+
+.WhatisParagraph{
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0px;
+    padding: 5px;
+}
+
+/* Tablet (≥ 600px) */
+@media (min-width: 600px) {
+    .WhatisSection{
+        padding-inline: 1.5%;
+        margin-block: 50px;
+    }
+    .WhatisHeader{
+        text-align: center;
+        font-weight: bold;
+        font-size: 28px;
+    }
+
+    .WhatisParagraph{
+        letter-spacing: 0%;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 36.8px;
+        text-align: center;
+        overflow-wrap: break-word; 
+    }
+}
+
+/* Small Desktop (≥ 768px) */
+@media (min-width: 769px) {
+    .WhatisHeader{
+        text-align: center;
+        font-weight: bold;
+        font-size: 48px;
+    }
+    .WhatisParagraph{
+        font-weight: 500;
+        font-size: 32px;
+        letter-spacing: -0.2%;
+        line-height: 46.8px;
+        text-align: center;
+        overflow-wrap: break-word;       
+    }
+}
+
+/* Key Features */
+.keyFeatures {
+    background-color: #cee5fdf5;
+    padding-block: 40px;
+}
+
+.keyFeaturesHeader{
+    font-weight: bolder;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 0px;
+    padding: 5px;
+    padding-bottom: 15px;
+}
+
+.keyFeaturesDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10;
+}
+
+.keyFeaturesCard{
+    background-color: white;
+    width: 99%;   
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.keyFeaturesLogo {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+
+.keyFeaturesH3{
+    font-weight: bold;
+    font-size: 16px;
+    padding-top: 11px;
+}
+
+.keyFeaturesP {
+    font-size: 12px;
+}
+
+/* Tablet (≥ 600px) */
+@media (min-width: 600px) {
+    .keyFeaturesHeader{
+        font-weight: bolder;
+        font-size: 34px;
+        text-align: center;
+        letter-spacing: 0px;
+        padding: 5px;
+        padding-bottom: 15px;
+    }
+    .keyFeaturesH3{
+        font-weight: bold;
+        font-size: 27px;
+        padding-top: 11px;
+        text-align: center;
+    }
+
+    .keyFeaturesP {
+        font-size: 24px;
+        text-align: center;
+    }
+}
+
+/* Small Desktop (≥ 768px) */
+@media (min-width: 769px) {
+    .keyFeatures{
+        padding-inline: 6%;
+    }
+    .keyFeaturesHeader{
+        text-align: center;
+        font-weight: bold;
+        font-size: 48px;
+        padding-bottom: 25px;
+    }
+    .keyFeaturesH3{
+        font-weight: bold;
+        font-size: 32px;
+        padding-top: 11px;
+        text-align: center;
+    }
+
+    .keyFeaturesP {
+        font-size: 24px;
+        text-align: center;
+    }
+    .keyFeaturesDiv {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 0;
+    }
+    .keyFeaturesCard{
+        width: 25.9%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+    }
+    .keyFeaturesLogoImg {
+        width: auto;
+        height: auto;
+    }
+    .keyFeaturesP {
+        padding-block: 15px;
+    }
+}
