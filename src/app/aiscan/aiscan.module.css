@@ -1,0 +1,187 @@
+.aiscan{
+    justify-self: center;
+    text-align: center;
+    padding-top: 50px;
+}
+.aiscanTop{
+    width: 1440px;
+    height: 406px;
+    position: inherit;
+    top: 219px;
+    padding: 24px 179px;
+    gap: 24px;
+    background-color: #CAE4FF;
+}
+.aiscanTopH2{
+    width: 1082px;
+    height: 99px;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 100%;
+    color: #040A40D9;
+}
+.aiscanTopP{
+    width: 1082px;
+    height: 132px;
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 100%;
+    color: #040A40D9;
+}
+.aiscanTopButton{
+    height: 69px;
+    width: 448px;
+    border-radius: 12px;
+    padding: 10px;
+    gap: 10px;
+    text-align: center;
+    background-color: #1886F4;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 100%;
+}
+.upload_container {
+    justify-self: center;
+    border-radius: 20px;
+    width: 1138px;
+    height: 1215px;
+    position: relative;
+    top: 85px;
+    gap: 82px;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.upload_area {
+    border: 3px dashed #040A4080;
+    width: 1138px;
+    height: 1050px;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 12px;
+    padding: 60px 20px;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 8px 8px 8px #1886F426;
+    margin-bottom: 50px;
+}
+.upload_icon {
+    width: 100px;
+    justify-items: center;
+    justify-self: center;
+    height: 75px;
+    rotate: 180deg;
+    border: 8.06px solid #1886F4;
+}
+
+.upload_text {
+    color: #040A40D9;
+    font-size: 32px;
+    font-weight: 500;
+    width: 886px;
+    height: 39px;
+    line-height: 100%;
+}
+
+.upload_subtext {
+    color: #9ca3af;
+    font-size: 16px;
+    font-weight: 500;
+    width: 886px;
+    height: 20px;
+    line-height: 100%;
+}
+
+.file_input {
+    display: none;
+}
+.fileButton{
+    width: 1138px;
+    height: 83px;
+    border-radius: 12px;
+    padding: 10px;
+    gap: 10px;
+    background-color: #1886F4;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 100%;
+    color: #FFFFFF;
+}
+
+@media(max-width:600px){
+    .aiscanTop{
+        width: 390px;
+        height: 189px;
+        gap: 12px;
+        padding: 24px;
+        margin-top: 40px;
+    }
+    .aiscanTopH2{
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 100%;
+        width: 368px;
+        height: 28px;
+    }
+    .aiscanTopP{
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 100%;
+        width: 326px;
+        height: 28px;
+    }
+    .aiscanTopButton{
+        width: 220px;
+        height: 44px;
+        border-radius: 8px;
+        padding: 10px;
+        gap: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 100%;
+    }
+    .upload_container{
+        width: 280px;
+        height: 325px;
+        margin-bottom: 150px;
+    }
+    .upload_area{
+        width: 280px;
+        height: 264.81px;
+        border-radius: 3.03px;
+        border: 0.76 solid #040A4080;
+        box-shadow: 2.02px 2.02px 2.02px #1886F426;
+    }
+    .upload_icon{
+        width: 30.26px;
+        height: 30.26px;
+        rotate: 180deg;
+    }
+    .upload_text{
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 100%;
+        width: 234px;
+        height: 17px;
+    }
+    .upload_subtext{
+        width: 223.45px;
+        height: 10px;
+        font-size: 8px;
+        font-weight: 500;
+        line-height: 100%;
+    }
+    .fileButton{
+        width: 280px;
+        height: 44px;
+        border-radius: 8px;
+        padding: 2.25px;
+        gap: 2.25px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 100%;
+    }
+}
