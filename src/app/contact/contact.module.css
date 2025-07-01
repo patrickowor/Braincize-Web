@@ -52,12 +52,13 @@
 .formm_textarea{
     width: 720px;
     height: 120px;
-    padding: 17px 23px 21px 20px;
+    padding: 20px 23px 21px 20px ;
     box-shadow: 0px 4px 14px #000000;
     border-radius: 10px;
-    margin: 5px 0px;
+    margin: 15px 0px;
     background-color: #ffffff;
-    resize: none 
+    resize: none;
+    overflow: hidden;
 }
 .formm_button{
     background-color: #1886F4;
@@ -72,7 +73,29 @@
     color: #FFFFFF;
     text-align: center 
 }
-
+@media(max-width:1000px){
+    .formm{
+    width: 600px;
+    padding-left: 30px;
+}
+.formm_maininput{
+    width: 250px;
+}
+.formm_textarea{
+    width: 550px;
+    height: 100px;
+}
+.formm_button{
+    background-color: #1886F4;
+    width: 200px;
+    height: 50px;
+    border-radius: 12px;
+    padding: 15px 45px;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 20px;
+}
+}
 @media(max-width: 600px){
     .contactpage{
         width: 390px;
