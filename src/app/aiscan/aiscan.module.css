@@ -1,15 +1,12 @@
 .aiscan{
     justify-self: center;
     text-align: center;
-    padding-top: 50px;
 }
 .aiscanTop{
     width: 1440px;
     height: 406px;
-    position: inherit;
-    top: 219px;
     padding: 24px 179px;
-    gap: 24px;
+    padding-top: 70px;
     background-color: #CAE4FF;
 }
 .aiscanTopH2{
@@ -47,6 +44,8 @@
     width: 1138px;
     height: 1215px;
     position: relative;
+    justify-items: center;
+    text-align: center;
     top: 85px;
     gap: 82px;
     text-align: center;
@@ -55,10 +54,8 @@
 
 .upload_area {
     border: 3px dashed #040A4080;
-    width: 1138px;
-    height: 1050px;
-    justify-items: center;
-    align-items: center;
+    width: 838px;
+    height: 500px;
     align-content: center;
     border-radius: 12px;
     padding: 60px 20px;
@@ -73,8 +70,7 @@
     justify-items: center;
     justify-self: center;
     height: 75px;
-    rotate: 180deg;
-    border: 8.06px solid #1886F4;
+    transform: rotateX('180deg');
 }
 
 .upload_text {
@@ -99,7 +95,7 @@
     display: none;
 }
 .fileButton{
-    width: 1138px;
+    width: 838px;
     height: 83px;
     border-radius: 12px;
     padding: 10px;
@@ -114,10 +110,10 @@
 @media(max-width:600px){
     .aiscanTop{
         width: 390px;
-        height: 189px;
+        height: 230px;
         gap: 12px;
         padding: 24px;
-        margin-top: 40px;
+        padding-top: 90px;
     }
     .aiscanTopH2{
         font-size: 24px;
@@ -158,7 +154,6 @@
     .upload_icon{
         width: 30.26px;
         height: 30.26px;
-        rotate: 180deg;
     }
     .upload_text{
         font-size: 14px;
