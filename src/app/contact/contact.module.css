@@ -5,7 +5,7 @@
     color: #040A40D9;
     padding-top: 50px;
     position: relative;
-    top: 15px;
+    padding-top: 65px;
     margin-bottom: 100px;
     align-content: center;
     padding-left: 30px 
@@ -18,7 +18,6 @@
     line-height: 100% 
 }
 .contactpage_p{
-    font-family: poppings;
     width: 442px;
     height: 90px;
     font-size: 24px;
@@ -34,21 +33,26 @@
     font-size: 16px;
     font-weight: 500;
     color: #5D666F;
-    line-height: 27.8px
+    line-height: 27.8px;
+    padding-left: 20px;
 }
 .formm_maininput{
-    width: 358px;
-    height: 80px;
-    padding: 20px 224px 28px 28px;
+    width: 350px;
+    height: 70px;
+    padding: 20px 28px 28px 28px;
     box-shadow: 0px 4px 14px #000000;
     border-radius: 10px;
-    margin: 13px;
+    margin: 13px 20px 13px 0px;
     background-color: #FFFFFF 
 }
+.formm_textarea,
+.formm_maininput:focus{
+    outline: none;
+}
 .formm_textarea{
-    width: 750px;
-    height: 79px;
-    padding: 17px 232px 21px 20px;
+    width: 720px;
+    height: 120px;
+    padding: 17px 23px 21px 20px;
     box-shadow: 0px 4px 14px #000000;
     border-radius: 10px;
     margin: 5px 0px;
