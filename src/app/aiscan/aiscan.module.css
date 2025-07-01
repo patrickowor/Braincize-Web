@@ -80,6 +80,7 @@
     width: 886px;
     height: 39px;
     line-height: 100%;
+    justify-self: center;
 }
 
 .upload_subtext {
@@ -89,6 +90,7 @@
     width: 886px;
     height: 20px;
     line-height: 100%;
+    justify-self: center;
 }
 
 .file_input {
@@ -106,7 +108,82 @@
     line-height: 100%;
     color: #FFFFFF;
 }
-
+@media(max-width:1000px){
+    .aiscanTop{
+        width: 790px;
+        justify-items: center;
+        justify-self: center;
+        height: 300px;
+        gap: 12px;
+        /* padding: 14px; */
+        padding-top: 90px;
+    }
+    .aiscanTopH2{
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 100%;
+        width: 368px;
+        height: 28px;
+    }
+    .aiscanTopP{
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 100%;
+        width: 326px;
+        padding-top: 5px;
+        height: 60px;
+    }
+    .aiscanTopButton{
+        width: 220px;
+        height: 44px;
+        border-radius: 8px;
+        padding: 10px;
+        gap: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 100%;
+    }
+    .upload_container{
+        width: 380px;
+        height: 425px;
+        margin-bottom: 150px;
+    }
+    .upload_area{
+        width: 350px;
+        height: 350px;
+        border-radius: 3.03px;
+        border: 0.76 solid #040A4080;
+        box-shadow: 2.02px 2.02px 2.02px #1886F426;
+    }
+    .upload_icon{
+        width: 30.26px;
+        height: 30.26px;
+    }
+    .upload_text{
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 100%;
+        width: 234px;
+        height: 40px;
+    }
+    .upload_subtext{
+        width: 223.45px;
+        height: 15px;
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 100%;
+    }
+    .fileButton{
+        width: 350px;
+        height: 44px;
+        border-radius: 8px;
+        padding: 2.25px;
+        gap: 2.25px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 100%;
+    }
+}
 @media(max-width:600px){
     .aiscanTop{
         width: 390px;
