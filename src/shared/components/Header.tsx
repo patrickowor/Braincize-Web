@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default async function Header() {
 
     return (
-        <header className={HeaderStyles.wrapper} >
+        <header className={`fnt-monserat  ${HeaderStyles.wrapper}`} >
             <section className={HeaderStyles.head}>
                 <div className={HeaderStyles.HeaderParent}>
                    <HeaderLogo /> 

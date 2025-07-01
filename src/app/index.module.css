@@ -69,6 +69,7 @@
 @media (min-width: 600px) {
     .homepage {
         padding-top: 70px;
+        width: 100%;
         background-color: #CAE4FF;
     }
 
