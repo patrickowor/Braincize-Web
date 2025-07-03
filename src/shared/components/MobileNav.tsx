@@ -21,7 +21,7 @@ export const NavLinks = () => {
     <Link href="/" >Home</Link>
     <Link href={"/about"} >About us</Link>
     <Link href={"/contact"} >Contact</Link>
-    <Link href={"/Research"}>Research</Link>
+    <Link href={"/research"}>Research</Link>
   </>)
 }
 
