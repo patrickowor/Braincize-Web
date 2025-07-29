@@ -20,7 +20,7 @@ export default function HomePage() {
             <span>Atrophy</span>
             <span>Detection</span>
           </div>
-          <p className={`fnt-poppins ${homeStyle.homepageSubText}`}>
+          <p className={`poppins ${homeStyle.homepageSubText}`}>
             <span>Achieve over 90% accuracy in detecting brain </span>
             <span>volume loss with our advanced AI solutions.</span>
           </p>
@@ -45,7 +45,7 @@ export default function HomePage() {
       </div>   
     </div>
     <div className={homeStyle.exploreBtnDiv}>
-      <Link className={`fnt-poppins signup-btn  ${homeStyle.exploreBtn}`} href={"/signup"}>Explore our Technology</Link>
+      <Link className={`poppins signup-btn  ${homeStyle.exploreBtn}`} href={"/signup"}>Explore our Technology</Link>
     </div>
       
   </section>);

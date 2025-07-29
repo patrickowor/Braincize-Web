@@ -144,7 +144,8 @@
 /* Small Desktop (≥ 768px) */
 @media (min-width: 768px) {
     .wrapper{
-        width: 98%;
+        width: 100%;
+        padding-right: 10px;
     }
     .pcNav{
         justify-content: flex-end;
@@ -161,10 +162,6 @@
 
 /* Large Desktop (≥ 1200px) */
 @media (min-width: 1200px) {
-  /* body {
-    font-size: 24px;
-    padding: 3rem;
-  } */
 }
 
 
@@ -177,5 +174,11 @@
   .wrapper {
     margin-inline: 10%;
     width: 79%;
+  }
+}
+
+@media (max-width: 1440.9px) {
+  .wrapper {
+    width: 99% ;
   }
 }
