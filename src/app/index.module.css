@@ -1,7 +1,7 @@
 /* HomePage Component Styles */
 
 .homepage {
-    padding-top: 120px;
+    padding-top: 100px;
     background-color: #e5effad8;
 }
 
@@ -38,6 +38,24 @@
     background-color: #0e64b9;
 }
 
+.spotlightTitle {
+  font-size: 16px;   
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+
+.spotlightBody {
+    padding-block: 5px;
+}
+
+.spotlightButton {
+    background-color: #1886F4;
+}
+
+.spotlightButton:hover {
+    background-color: #0e64b9;
+}
 
 
 
@@ -111,6 +129,18 @@
         margin-top: 25px;
         margin-bottom: 25px;
     }
+
+    .spotlightTitle {
+        font-size: 27px;
+    }
+    .spotlightBody, .spotlightButton {
+        font-size: 20px;
+    }
+
+    .spotlightButton{
+        margin-top: 5px;
+    }
+
 }
 
 /* Small Desktop (≥ 768px) */
@@ -139,6 +169,19 @@
         margin-top: 25px;
         margin-bottom: 25px;
     }
+
+    .spotlightTitle {
+        font-size: 32px;
+    }
+
+    .spotlightBody,
+    .spotlightButton {
+        font-size: 24px;
+    }
+
+    .spotlightButton {
+        margin-top: 5px;
+    }
 }
 
 /* Large Desktop (≥ 1200px) */
@@ -147,6 +190,10 @@
         right: 0;
         top: 25;
         width: 750px;
+    }
+
+    .spotlightTitle {
+        font-size: 48px;
     }
 }
 
@@ -240,7 +287,8 @@
 .keyFeaturesDiv {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    /* align-items: center; */
     gap: 10;
 }
 
@@ -320,10 +368,11 @@
         gap: 0;
     }
     .keyFeaturesCard{
-        width: 25.9%;
+        width: 31.9%;
         display: flex;
         flex-direction: column;
         border-radius: 10px;
+
     }
     .keyFeaturesLogoImg {
         width: auto;

@@ -5,6 +5,7 @@
     left: 0px;
     z-index: 10;
     width: 97%;
+    padding-bottom: 5px;
     background-color: #cae4ff93;
 }
 
@@ -179,6 +180,6 @@
 
 @media (max-width: 1440.9px) {
   .wrapper {
-    width: 99% ;
+    width: 99.99% ;
   }
 }

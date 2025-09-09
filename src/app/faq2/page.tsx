@@ -1,4 +1,5 @@
-import faqStyle from "@/app/faq.module.css";
+import faqStyle from "@/shared/styles/faq.module.css";
+import ContactForm from "@/shared/components/ContactForm";
 import Image  from "next/image"
 
 
@@ -53,29 +54,6 @@ export default function faq() {
             </div>
         </div>
 
-        <div>
-            <form action="#" className={faqStyle.formContainer}>
-                <div className={faqStyle.nameGroup}>
-                    <div className={faqStyle.inputWrapper}>
-                    <input type="text" id="name" name="name" placeholder="Your Name"/>
-                    </div>
-                    <div className={faqStyle.inputWrapper}>
-                    <input type="email" id="email" name="email"  placeholder="Your Email"/>
-                    </div>
-                </div>
-                 <div className={faqStyle.nameGroup}>
-                    <div className={faqStyle.inputWrapper}>
-                    <input type="text" id="address" name="address" placeholder="Your Address"/>
-                    </div>
-                    <div className={faqStyle.inputWrapper}>
-                    <input type="text" id="number" name="number" placeholder="Your Number"/>
-                    </div>
-                </div>
-                <div className={faqStyle.inputWrapper}>
-                    <textarea id="text" name="text" placeholder="Write Something"></textarea>
-                </div>
-            </form>
-             <button typeof="button" className={`.fnt-poppins ${faqStyle.but}`}>Learn More</button>
-        </div>
+        <ContactForm style={faqStyle} />
     </>
 }

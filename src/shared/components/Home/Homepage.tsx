@@ -4,13 +4,15 @@ import homeStyle from "@/app/index.module.css";
 import Link from "next/link";
 
 export default function HomePage() {
-
+  
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const {props: {style, srcSet, ..._}, } = getImageProps({
     src: "/images/BrainHomeSm.png",
     alt: "Braincize",
     width:362.66,
-    height:187.14
-  })
+    height:187.14 
+  });
+
 
   return (<section className={homeStyle.homepage}>
     <div className={homeStyle.homepageStack}>

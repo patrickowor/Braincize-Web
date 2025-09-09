@@ -1,13 +1,14 @@
-body {
+/* body {
   background:  #84b6f2;
-}
+} */
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   height: 100vh;
-  margin: 100px 0;
+  margin: 70px 0;
+  margin-bottom: 0;
   background-image: url('../../public/images/c0a94b2d9e9b9172cfd337590536212ff0cb77af.png') !important;
   background-size: cover;
   background-repeat: no-repeat;
@@ -16,21 +17,21 @@ body {
   flex: 1;
 }
 .overlay_text {
-  margin-top: 50px;
+  margin: 50px;
   text-align: center;
-  background:#7eabe2;
+  background:#052142;
   padding: 20px 30px;
   border-radius: 8px;
 }
 .overlay_text h2 {
-  color: #1a1f4b;
+  color: #fff;
   line-height: 1.3;
   font-size: 30px;
   margin-bottom: 15px;
 }
 .overP {
   font-size: 18px;
-  color: #1a1f4b;
+  color: #fff;
 }
 .right_panel {
   flex: 1;
@@ -153,16 +154,19 @@ body {
     display: block;
     height: fit-content;
     width: fit-content;
+    margin-bottom: 80;
   }
    .left_panel {
     margin-bottom: 300px;
   }
+
    .right_panel {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     height: 66vh;
+    background-color: rgba(0, 0, 0, 0.0);
   }
   .card {
     width: 100%;
@@ -174,6 +178,8 @@ body {
 }
 @media (max-width: 600px) {
   .container {
+    margin: 100px 0;
+    margin-bottom: 180;
     display: flex;
     display: flex;
     align-items: center;
@@ -185,14 +191,20 @@ body {
     display: none !important;
   }
   .right_panel {
-    height: 100vh;
     width: fit-content;
+    margin-top: 50vh;
+    background-color: rgba(0, 0, 0, 0.0);
+  }
+
+  .name_group {
+    flex-direction: column;
+    gap: 0px;
   }
 }
 @media (max-width: 480px) {
   .container {
     height: 100vh !important;
-    width: fit-content !important;
+    /* width: fit-content !important; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -202,5 +214,7 @@ body {
   }
   .right_panel {
     height: 100vh;
+    background-color: rgba(0, 0, 0, 0.0);
+    margin-top: 50vh;
   }
 }

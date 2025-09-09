@@ -96,7 +96,7 @@
     
     .FooterAppLogo{
         width: 294.49px !important;
-        height: 235.6px !important;
+        height: 205.6px !important;
     }
 
     .quickLinksParentWrapper{
@@ -111,8 +111,16 @@
     }
 }
 
-/* Medium Desktop (≥ 992px) */
-@media (min-width: 992px) {
+@media (max-width: 995px) and (min-width: 768px) {
+    .footerLogoAndTextWrapper{
+        flex-direction: column;
+    }
+    .FooterAppLogo {
+        /* width: 294.49px !important;
+        height: 205.6px !important; */
+        width: 144px !important;
+        height: 105.2px !important;
+    }
 
 }
 

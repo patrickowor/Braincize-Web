@@ -1,8 +1,11 @@
-import faqStyle from "@/app/faq.module.css";
+import faqStyle from "@/shared/styles/faq.module.css";
+import ContactForm from "@/shared/components/ContactForm";
+import { FaqQuestions } from "@/shared/components/Faq/FaqQuestions";
 import Image  from "next/image"
 
 
-export default function faq() {
+
+export default function Faq() {
     return <>
         <div className={faqStyle.faqContainer}>
             <div>
@@ -33,49 +36,8 @@ export default function faq() {
         </picture>
         </div>
 
-        <div className={faqStyle.faqBox}>
-            <h2 className={`.fnt-poppins ${faqStyle.faqH2}`}>Frequently Asked Question (FAQ)</h2>
-            <div className={`.fnt-poppins ${faqStyle.orderList}`}>
-                <ol>
-                    <li>
-                        1. How is Braincize different from a regular MRI ?
-                    </li>
-                    <li>
-                        2. Who should consider using Braincize ?
-                    </li>
-                    <li>
-                        3. Is Braincize safe for everyone to use?
-                    </li>
-                    <li>
-                        4. How long does it take to see results with Braincize ?
-                    </li>
-                </ol>
-            </div>
-        </div>
+        <FaqQuestions />
 
-        <div>
-            <form action="#" className={faqStyle.formContainer}>
-                <div className={faqStyle.nameGroup}>
-                    <div className={faqStyle.inputWrapper}>
-                    <input type="text" id="name" name="name" placeholder="Your Name"/>
-                    </div>
-                    <div className={faqStyle.inputWrapper}>
-                    <input type="email" id="email" name="email"  placeholder="Your Email"/>
-                    </div>
-                </div>
-                 <div className={faqStyle.nameGroup}>
-                    <div className={faqStyle.inputWrapper}>
-                    <input type="text" id="address" name="address" placeholder="Your Address"/>
-                    </div>
-                    <div className={faqStyle.inputWrapper}>
-                    <input type="text" id="number" name="number" placeholder="Your Number"/>
-                    </div>
-                </div>
-                <div className={faqStyle.inputWrapper}>
-                    <textarea id="text" name="text" placeholder="Write Something"></textarea>
-                </div>
-            </form>
-            <button typeof="button" className={`.fnt-poppins ${faqStyle.but}`}>Learn More</button>
-        </div>
+        <ContactForm style={faqStyle} />
     </>
 }

@@ -31,7 +31,7 @@ export default function KeyFeatures() {
         </div>
         <div>
           <h4 className={`fnt-poppins  ${homeStyle.keyFeaturesH3}`}  >AI Analysis</h4>
-          <p className={`fnt-poppins  ${homeStyle.keyFeaturesP}`} >Our AI analyzes the scan for signs of brain volume loss and neurodegeneration.</p>
+          <p className={`fnt-poppins  ${homeStyle.keyFeaturesP}`} >Our AI analyzes the scan for signs of brain volume loss and neuro-degeneration.</p>
         </div>
       </div>
       <div className={homeStyle.keyFeaturesCard}>

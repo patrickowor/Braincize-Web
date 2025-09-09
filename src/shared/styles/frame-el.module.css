@@ -1,0 +1,32 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding-inline: 5%;
+    padding-block: 25px;
+}
+
+.wrapperReverse {
+    flex-direction: row-reverse;
+}
+
+.image {
+    width: 40%;
+}
+
+
+.text {
+    padding-inline: 10px;
+    width: 59%;
+}
+
+/* Small Desktop (≥ 768px) */
+@media (min-width: 769px) {
+    .image {
+        width: 30% ;
+    }
+    .text {
+        padding-inline: 20px;
+        width: 69%;
+    }
+}
