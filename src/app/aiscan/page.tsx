@@ -20,7 +20,7 @@ export default function Aiscan(){
                 <div className={aiStyle.upload_text}>Click to upload or Drag and drop</div>
                 <div className={aiStyle.upload_subtext}>Support for multiple file types (PDF, DOC, TXT, etc.)</div>
                 </label>
-                <input type="file" id="fileInput" className={aiStyle.file_input} multiple accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png"/>
+                <input type="file" id="fileInput" className={aiStyle.file_input} multiple accept=".jpg,.jpeg,.png"/>
             </div>
             <button className={aiStyle.fileButton}>AI Scan</button>
         </div>

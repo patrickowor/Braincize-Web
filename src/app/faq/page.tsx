@@ -2,6 +2,7 @@ import faqStyle from "@/shared/styles/faq.module.css";
 import ContactForm from "@/shared/components/ContactForm";
 import { FaqQuestions } from "@/shared/components/Faq/FaqQuestions";
 import Image  from "next/image"
+import Link from "next/link";
 
 
 
@@ -17,7 +18,10 @@ export default function Faq() {
                 </p>
             </div>
 
-            <button typeof="button" className={`.fnt-poppins ${faqStyle.bnt1}`}>Learn More</button>
+            <Link href={'/research'}>
+                <button typeof="button" className={`.fnt-poppins ${faqStyle.bnt1}`} >Learn More</button>
+            </Link>
+          
         </div>
 
         <div className={faqStyle.ImageContainer}>
@@ -28,7 +32,7 @@ export default function Faq() {
           />
           <Image
             className={faqStyle.Img1}
-            src={"/images/552d6e51e64bc2b9d2e1f2132d6d1d8d68a4b48a (4).png"}
+            src={"/images/faqimage.png"}
             alt="Braincize"
             width={1146.32}
             height={739.76}

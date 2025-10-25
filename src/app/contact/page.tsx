@@ -1,6 +1,6 @@
 import ContactForm from "@/shared/components/ContactForm";
 import contactStyle from "./contact.module.css"
-import faqStyle from "@/app/faq.module.css";
+import faqStyle from "@/shared/styles/faq.module.css";
 
 export default function Contact() {
     return (<>

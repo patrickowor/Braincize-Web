@@ -4,7 +4,7 @@ type ContactFormProps = {
 
 export default function ContactForm( { style }: ContactFormProps) {
     return (
-                <div>
+        <div>
             <form action="#" className={style.formContainer}>
                 <div className={style.nameGroup}>
                     <div className={style.inputWrapper}>

@@ -2,14 +2,18 @@ import { FrameEl } from "../frameElement"
 import Style from '@/app/about/about.module.css'
 
 export function Mission() {
-    return <section className="bg-gradient-to-tr from-[#eaf8fa] to-white" style={{paddingTop: '50px'}}>
-        <FrameEl src={`/images/mission.png`}> 
+    const myTitle = `Our Mission`
+    return <section className={`bg-gradient-to-tr from-[#d0def7] to-white ${Style.PADDINGTOP}`}>
+        <h3 className={`${Style.spotlightTitle} ${Style.spotlightTitle2Hide}`}>
+            <span>{myTitle}</span>
+        </h3>
+        <FrameEl src={`/images/mission.png`} wrapperClass={Style.MissionFrameWrapper} imgClass={Style.MissionFrameimage} textClass={Style.MissionTextWrapper}> 
             <div>
-                <h3 className={`${Style.spotlightTitle} `}>
-                    <span>Our Mission</span>
+                <h3 className={`${Style.spotlightTitle} ${Style.spotlightTitleHide}`}>
+                    <span>{myTitle}</span>
                 </h3>
 
-                <div className={`${Style.spotlightBody} `}>
+                <div className={`${Style.spotlightBody} ${Style.MissionBody} `}>
                     To develop advanced diagnostic imaging solutions using Artificial Intelligence (AI) and Magnetic Resonance Imaging (MRI) to:
 
                     <ul>
@@ -28,7 +32,7 @@ export function Mission() {
     </section>
 }
 
-const Selected = ({className} : {className? : string }) => {
+export const Selected = ({className} : {className? : string }) => {
     return <div>
             <svg className={className ?? ''} width="15" height="15" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_2001_569)">
@@ -44,3 +48,4 @@ const Selected = ({className} : {className? : string }) => {
     </div>
 
 }
+

@@ -1,14 +1,29 @@
+.PADDINGTOP{
+    padding-top: 50px;
+}
+
 .Wrapper {
     background-color: rgba(214, 214, 214, 0.486);
     padding-top: 30px;
 }
 
-.spotlightTitle {
+.spotlightTitle, .founderMessageTitle {
     font-size: 16px;
     font-weight: bold;
     display: flex;
     flex-direction: column;
 }
+
+.founderMessageTitle, .founderMessage{
+    text-align: center;
+}
+.founderMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 
 .spotlightBody {
     padding-block: 5px;
@@ -50,6 +65,41 @@
 
 /* exclusive to small screens  */
 @media (max-width: 599.9px) {
+    .PADDINGTOP {
+        padding-top: 25px;
+    }
+    .MissionFrameWrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    .MissionFrameimage {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .MissionTextWrapper {
+        width: 100% !important;
+    }
+    .spotlightTitleHide{
+        display: none;
+    }
+    .spotlightTitle2Hide{
+        display: block;
+        text-align: center;
+        font-size: 32px;
+    }
+    .founderMessageTitle{
+        text-align: center;
+        font-size: 32px;
+    }
+
+    .founderMessage{
+        font-size: 16px;
+        display: block;
+
+    }
+
     .Wrapper {
         padding-top: 70px;
     }
@@ -66,14 +116,26 @@
     }
 }
 
+@media (min-width: 599.9px) {
+    .spotlightTitleHide {
+        display: block;
+    }
+
+    .spotlightTitle2Hide {
+        display: none;
+    }
+}
+
 /* Tablet (≥ 600px) */
 @media (min-width: 600px) {
-    .spotlightTitle {
+    .spotlightTitle, .founderMessageTitle {
         font-size: 27px;
     }
 
+
     .spotlightBody,
-    .spotlightButton {
+    .spotlightButton,     
+    .founderMessage {
         font-size: 20px;
     }
 
@@ -98,6 +160,10 @@
 
 /* Small Desktop (≥ 768px) */
 @media (min-width: 769px) {
+    .MissionFrameimage {
+        max-width: 30% !important;
+        min-width: 20% !important;
+    }
     .spotlightTitle {
         font-size: 32px;
     }
@@ -129,13 +195,16 @@
 }
 
 @media (min-width: 769px) {
-        .spotlightImg {
-            width: 20%;
-        }
+    .spotlightImg {
+        width: 20%;
+    }
 }
 
 /* Large Desktop (≥ 1200px) */
 @media (min-width: 1200px) {
+    .MissionFrameimage{
+        width: 20% !important;
+    }
     .spotlightTitle {
         font-size: 48px;
     }

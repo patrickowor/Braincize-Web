@@ -24,7 +24,7 @@ export default function Footer(){
                 <div className={footerStyles.quickLinksdiv}>
                     <Link href={`/`}>Home</Link>
                     <Link href={`/about`}>About</Link>
-                    <Link href={`/research`}>Research</Link>
+                    <Link href={`/faq`}>FAQ</Link>
                 </div>
             </div>
             <div className={footerStyles.quickLinksWrapper}>
