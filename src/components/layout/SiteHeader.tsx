@@ -6,9 +6,19 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { authLinks, mainNav } from "@/config/site";
 import { cn } from "@/lib/cn";
+import { rem } from "@/lib/rem";
 import { Icon } from "@/components/ui/Icon";
 
 export type HeaderVariant = "home" | "default";
+
+/** Desktop position of the header inside the 1440 frame, in design px. */
+export interface HeaderOffset {
+  left: number;
+  top: number;
+}
+
+/** The Figma frames place the header at slightly different offsets per page; pages pass theirs. */
+export const defaultHeaderOffset: HeaderOffset = { left: 66.5, top: 0 };
 
 const isActive = (pathname: string, href: string) =>
   href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
@@ -26,7 +36,13 @@ const chevron = {
  *  - "home": Poppins, overlays the hero, has a Log in button (Desktop-1)
  *  - "default": Montserrat, sits above the page content (every other frame)
  */
-export function SiteHeader({ variant = "default" }: { variant?: HeaderVariant }) {
+export function SiteHeader({
+  variant = "default",
+  offset = defaultHeaderOffset,
+}: {
+  variant?: HeaderVariant;
+  offset?: HeaderOffset;
+}) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const home = variant === "home";
@@ -37,10 +53,8 @@ export function SiteHeader({ variant = "default" }: { variant?: HeaderVariant })
     <header className={cn("relative z-20", home && "lg:absolute lg:inset-x-0 lg:top-0")}>
       {/* Desktop */}
       <div
-        className={cn(
-          "mx-auto hidden w-[90rem] items-center gap-[16.375rem] lg:flex",
-          home ? "pt-[0.875rem]" : "pt-[1.9375rem] pl-[4.5625rem]",
-        )}
+        className="mx-auto hidden w-[90rem] items-center gap-[16.375rem] lg:flex"
+        style={home ? { paddingTop: rem(14) } : { paddingTop: rem(offset.top), paddingLeft: rem(offset.left) }}
       >
         <Link href="/" className="relative block h-[7.55044rem] w-[9.4375rem] shrink-0" aria-label="Braincize home">
           <Image src="/images/shared/logo.png" alt="Braincize" fill unoptimized className="object-cover" priority />
@@ -101,8 +115,17 @@ export function SiteHeader({ variant = "default" }: { variant?: HeaderVariant })
 
       {/* Mobile */}
       <div className="lg:hidden">
-        <div className="relative left-[0.5rem] mx-auto flex w-[22.875rem] max-w-full items-center justify-between pt-[0.875rem]">
-          <Link href="/" className="relative block h-[4.07481rem] w-[5.09319rem]" aria-label="Braincize home">
+        <div
+          className={cn(
+            "relative mx-auto flex w-[22.875rem] max-w-full items-center justify-between pt-[0.875rem]",
+            home && "left-[0.5rem]",
+          )}
+        >
+          <Link
+            href="/"
+            className={cn("relative block", home ? "h-[4.07481rem] w-[5.09319rem]" : "h-[3.55019rem] w-[4.4375rem]")}
+            aria-label="Braincize home"
+          >
             <Image src="/images/shared/logo.png" alt="Braincize" fill unoptimized className="object-cover" priority />
           </Link>
           <Link
@@ -119,13 +142,17 @@ export function SiteHeader({ variant = "default" }: { variant?: HeaderVariant })
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={() => setOpen((value) => !value)}
-          className="mt-[3.375rem] ml-[1.8125rem] block size-[2.25rem] cursor-pointer"
+          className={cn("block cursor-pointer", home ? "mt-[3.375rem] ml-[1.8125rem] size-[2.25rem]" : "mt-[0.75rem] ml-[0.6875rem] size-[1.5rem]")}
         >
-          <Icon src="/icons/mobile/menu.svg" size={36} boxInset="16.67% 12.5%" />
+          <Icon src="/icons/mobile/menu.svg" size={home ? 36 : 24} boxInset="16.67% 12.5%" />
         </button>
 
         {open && (
-          <nav id="mobile-menu" aria-label="Main" className="mx-[1rem] mt-[0.5rem] flex flex-col rounded-[0.5rem] bg-white p-[0.5rem] shadow-[0_0.25rem_0.46875rem_0_rgba(24,134,244,0.1)]">
+          <nav
+            id="mobile-menu"
+            aria-label="Main"
+            className="mx-[1rem] mt-[0.5rem] flex flex-col rounded-[0.5rem] bg-white p-[0.5rem] shadow-[0_0.25rem_0.46875rem_0_rgba(24,134,244,0.1)]"
+          >
             {mainNav.map((item) => (
               <Link
                 key={item.href}
