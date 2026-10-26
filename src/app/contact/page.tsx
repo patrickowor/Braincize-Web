@@ -23,7 +23,9 @@ export default function ContactPage() {
         </p>
       </PageBand>
 
-      <ContactForm className="mt-[3rem] max-w-full px-[1rem] pb-[6rem] lg:mt-[4.5rem] lg:w-[58.1875rem] lg:px-[4.5625rem] lg:pb-[10rem]" />
+      <div className="px-[1rem] pt-[2rem] pb-[4rem] lg:px-[4.5625rem] lg:pt-[3rem] lg:pb-[6rem]">
+        <ContactForm className="mx-auto max-w-[58rem]" />
+      </div>
     </SiteShell>
   );
 }

@@ -8,9 +8,7 @@ import { cn } from "@/lib/cn";
 const empty: ContactMessage = { name: "", email: "", address: "", phone: "", message: "" };
 
 const field =
-  "w-full rounded-[0.625rem] bg-surface text-ink font-poppins font-medium capitalize outline-none placeholder:opacity-50 shadow-[0_0.25rem_1.5625rem_0.3125rem_rgba(4,10,64,0.1)] " +
-  "text-[0.75rem] tracking-[-0.00015rem] placeholder:text-ink-faint placeholder:opacity-70 " +
-  "lg:text-[1rem] lg:tracking-normal lg:shadow-[0_0.25rem_0.875rem_0_rgba(0,0,0,0.25)] lg:placeholder:text-placeholder lg:placeholder:opacity-50";
+  "w-full border border-edge bg-page px-[0.875rem] font-poppins text-[0.9375rem] text-ink outline-none transition-shadow placeholder:text-placeholder focus:border-brand focus:ring-4 focus:ring-brand/20";
 
 /** Contact form used on the Contact page and below the FAQ on the AI Scan page. */
 export function ContactForm({ className }: { className?: string }) {
@@ -31,32 +29,39 @@ export function ContactForm({ className }: { className?: string }) {
   }
 
   return (
-    <form onSubmit={onSubmit} className={cn("flex flex-col", className)}>
-      <div className="flex flex-wrap content-center items-center gap-x-[2.125rem] gap-y-[1.875rem] px-[0.34375rem]">
-        <input {...bind("name")} required placeholder="your name" aria-label="Your name" className={cn(field, "h-[2.75rem] w-[16.25rem] px-[0.75rem] lg:h-[4.9375rem] lg:w-[22.375rem] lg:px-[1.5rem]")} />
-        <input {...bind("email")} required type="email" placeholder="your email" aria-label="Your email" className={cn(field, "h-[2.75rem] w-[16.25rem] px-[0.75rem] lg:h-[4.9375rem] lg:w-[22.375rem] lg:px-[1.5rem]")} />
-        <input {...bind("address")} placeholder="your address" aria-label="Your address" className={cn(field, "h-[2.75rem] w-[16.25rem] px-[0.75rem] lg:h-[4.9375rem] lg:w-[22.375rem] lg:px-[1.5rem]")} />
-        <input {...bind("phone")} type="tel" placeholder="your number" aria-label="Your number" className={cn(field, "h-[2.75rem] w-[16.25rem] px-[0.75rem] lg:h-[4.9375rem] lg:w-[22.375rem] lg:px-[1.5rem]")} />
+    <form
+      onSubmit={onSubmit}
+      className={cn("border border-edge bg-surface p-[1.25rem] shadow-[0_0.5rem_2rem_0_rgba(24,134,244,0.12)] lg:p-[2.5rem]", className)}
+    >
+      <h2 className="font-montserrat text-[1.25rem] font-bold text-navy lg:text-[1.75rem]">Send us a message</h2>
+      <p className="mt-[0.375rem] mb-[1.5rem] font-poppins text-[0.875rem] text-ink opacity-70 lg:text-[1rem]">
+        Tell us a little about yourself and we&apos;ll get back to you.
+      </p>
+
+      <div className="grid gap-[1rem] lg:grid-cols-2 lg:gap-[1.25rem]">
+        <input {...bind("name")} required placeholder="Your name" aria-label="Your name" className={cn(field, "h-[3rem]")} />
+        <input {...bind("email")} required type="email" placeholder="Your email" aria-label="Your email" className={cn(field, "h-[3rem]")} />
+        <input {...bind("address")} placeholder="Your address" aria-label="Your address" className={cn(field, "h-[3rem]")} />
+        <input {...bind("phone")} type="tel" placeholder="Your number" aria-label="Your number" className={cn(field, "h-[3rem]")} />
         <textarea
           {...bind("message")}
           required
-          rows={1}
-          placeholder="Write Something"
+          rows={5}
+          placeholder="Write something"
           aria-label="Your message"
-          className={cn(field, "h-[2.75rem] w-[21.875rem] max-w-full resize-none px-[0.75rem] py-[0.75rem] lg:h-[4.9375rem] lg:w-[46.875rem] lg:px-[1.5rem] lg:py-[1.625rem]")}
+          className={cn(field, "resize-none py-[0.75rem] lg:col-span-2")}
         />
       </div>
 
-      <div className="mt-[2rem] lg:mt-[3rem]">
+      <div className="mt-[1.5rem] flex flex-col gap-[0.75rem] lg:flex-row lg:items-center lg:gap-[1.25rem]">
         <button
           type="submit"
           disabled={pending}
-          className="flex w-[9.3125rem] cursor-pointer items-center justify-center rounded-[0.5rem] bg-brand p-[0.625rem] font-poppins text-[1rem] leading-[normal] font-semibold text-white disabled:opacity-60 lg:w-auto lg:rounded-[0.75rem] lg:px-[2.8125rem] lg:py-[0.9375rem] lg:text-[1.5rem]"
+          className="flex h-[3rem] w-full cursor-pointer items-center justify-center bg-brand px-[2rem] font-poppins text-[1rem] font-semibold text-white transition-colors hover:brightness-95 disabled:opacity-60 lg:w-auto"
         >
-          <span className="lg:hidden">Contact us</span>
-          <span className="hidden lg:inline">Contact Us</span>
+          Contact us
         </button>
-        <p role="status" className="mt-[0.75rem] font-poppins text-[0.875rem] text-ink">
+        <p role="status" className="font-poppins text-[0.875rem] text-ink">
           {status === "success" && "Thanks, we'll be in touch."}
           {status === "error" && error}
         </p>

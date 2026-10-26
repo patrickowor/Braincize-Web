@@ -21,7 +21,7 @@ export function ProjectCard({ project }: { project: Project }) {
           : "opacity-70",
       )}
     >
-      <div className="rounded-xl bg-gradient-to-br from-dash-primary to-dash-accent p-4">
+      <div className=" bg-gradient-to-br from-dash-primary to-dash-accent p-4">
         <Icon className="h-12 w-12 text-white" aria-hidden />
       </div>
       <div>

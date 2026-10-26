@@ -12,7 +12,7 @@ export function KeyFeatures({ className }: { className?: string }) {
         {features.map((feature) => (
           <li
             key={feature.title}
-            className="flex items-center gap-[0.75rem] rounded-[0.5rem] bg-surface p-[0.5rem] drop-shadow-[0_0.25rem_0.46875rem_rgba(24,134,244,0.1)] lg:w-[23.625rem] lg:flex-col lg:gap-[1.75rem] lg:rounded-[1.5rem] lg:px-[1.5rem] lg:py-[3rem]"
+            className="flex items-center gap-[0.75rem] bg-surface p-[0.5rem] drop-shadow-[0_0.25rem_0.46875rem_rgba(24,134,244,0.1)] lg:w-[23.625rem] lg:flex-col lg:gap-[1.75rem] lg:px-[1.5rem] lg:py-[3rem]"
           >
             <span className="lg:hidden">
               <Icon {...feature.icon.mobile} size={64} />

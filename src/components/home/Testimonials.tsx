@@ -58,7 +58,7 @@ export function Testimonials({ className }: { className?: string }) {
         {testimonials.map((item) => (
           <li
             key={item.author}
-            className="flex h-[15.85437rem] w-full shrink-0 snap-center flex-col items-center justify-center gap-[2.15306rem] rounded-[0.66838rem] bg-white/[0.01] p-[0.6695rem] shadow-[0_0.39144rem_0.58719rem_0_rgba(24,134,244,0.1)] backdrop-blur-[1.17437rem] lg:h-[35.52019rem] lg:gap-[4.82375rem] lg:rounded-[1.05244rem] lg:p-[1.5rem] lg:shadow-[0_0.87706rem_1.31556rem_0_rgba(24,134,244,0.1)] lg:backdrop-blur-[2.63112rem]"
+            className="flex h-[15.85437rem] w-full shrink-0 snap-center flex-col items-center justify-center gap-[2.15306rem] bg-white/[0.01] p-[0.6695rem] shadow-[0_0.39144rem_0.58719rem_0_rgba(24,134,244,0.1)] backdrop-blur-[1.17437rem] lg:h-[35.52019rem] lg:gap-[4.82375rem] lg:p-[1.5rem] lg:shadow-[0_0.87706rem_1.31556rem_0_rgba(24,134,244,0.1)] lg:backdrop-blur-[2.63112rem]"
           >
             <blockquote className="w-full font-poppins text-[0.70437rem] leading-[normal] font-medium tracking-[-0.00141rem] text-ink lg:w-[37.27425rem] lg:text-[1.57869rem] lg:tracking-[-0.00316rem]">
               {item.quote}

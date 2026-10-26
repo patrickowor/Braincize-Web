@@ -6,14 +6,14 @@ import { cn } from "@/lib/cn";
 export function Neuroscience({ className }: { className?: string }) {
   return (
     <section className={cn("mx-auto flex w-[81rem] items-end gap-[3.4375rem] p-[1.5rem]", className)}>
-      <div className="relative h-[28.0625rem] w-[27.5625rem] shrink-0 overflow-clip rounded-[0.93631rem]">
-        <div className="absolute top-[-0.13125rem] left-[-8.62625rem] h-[31.43894rem] w-[39.6415rem] rounded-[0.71156rem]">
+      <div className="relative h-[28.0625rem] w-[27.5625rem] shrink-0 overflow-clip">
+        <div className="absolute top-[-0.13125rem] left-[-8.62625rem] h-[31.43894rem] w-[39.6415rem]">
           <Image
             src="/images/home/neuroscience.png"
             alt="A clinician reviewing brain MRI scans"
             fill
             unoptimized
-            className="rounded-[0.71156rem] object-cover"
+            className=" object-cover"
           />
         </div>
       </div>
@@ -29,7 +29,7 @@ export function Neuroscience({ className }: { className?: string }) {
             individuals — long before symptoms appear.
           </p>
         </div>
-        <LinkButton href="/about" className="w-[14.4375rem] rounded-[0.75rem] p-[0.625rem] font-poppins text-[1.5rem] font-semibold">
+        <LinkButton href="/about" className="w-[14.4375rem] p-[0.625rem] font-poppins text-[1.5rem] font-semibold">
           Read more
         </LinkButton>
       </div>

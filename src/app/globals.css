@@ -107,3 +107,9 @@ body {
   font-family: var(--font-poppins);
   -webkit-font-smoothing: antialiased;
 }
+
+/* Square corners across the site, including third-party toasts. */
+[data-sonner-toast],
+[data-sonner-toaster] button {
+  border-radius: 0 !important;
+}

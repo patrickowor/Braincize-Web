@@ -23,7 +23,7 @@ export function Newsletter() {
         </h2>
 
         <form onSubmit={onSubmit} className="absolute top-[6.8125rem] left-[37.875rem] h-[6rem] w-[42.24988rem]">
-          <div className="absolute inset-0 rounded-[2.1875rem] bg-white" />
+          <div className="absolute inset-0 bg-white" />
           <label className="absolute inset-y-0 left-0 w-[27.875rem]">
             <span className="sr-only">Your e-mail</span>
             <input
@@ -32,7 +32,7 @@ export function Newsletter() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder=" "
-              className="peer absolute inset-0 rounded-l-[2.1875rem] bg-transparent pt-[1rem] pr-[1rem] pl-[1.71rem] font-poppins text-[1.25rem] text-[rgba(4,10,64,0.85)] outline-none"
+              className="peer absolute inset-0 bg-transparent pt-[1rem] pr-[1rem] pl-[1.71rem] font-poppins text-[1.25rem] text-[rgba(4,10,64,0.85)] outline-none"
             />
             <span
               aria-hidden
@@ -44,7 +44,7 @@ export function Newsletter() {
           <button
             type="submit"
             disabled={pending}
-            className="absolute top-0 left-[27.875rem] h-[6rem] w-[14.3455rem] cursor-pointer rounded-[2.1875rem] bg-brand font-poppins text-[1.5rem] leading-[normal] font-medium text-white capitalize disabled:opacity-60"
+            className="absolute top-0 left-[27.875rem] h-[6rem] w-[14.3455rem] cursor-pointer bg-brand font-poppins text-[1.5rem] leading-[normal] font-medium text-white capitalize disabled:opacity-60"
           >
             <span className="mx-auto block w-[9.34775rem]">subscribe now</span>
           </button>

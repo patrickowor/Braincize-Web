@@ -51,7 +51,7 @@ export function MediaUploader(props: MediaUploaderProps) {
         Upload Brain MRI {mode === "images" ? "Images" : "Video"}
       </h2>
       <Card className="p-8">
-        <div role="tablist" aria-label="Upload type" className="mb-6 inline-flex rounded-lg bg-dash-muted p-1">
+        <div role="tablist" aria-label="Upload type" className="mb-6 inline-flex bg-dash-muted p-1">
           {tabs.map((tab) => (
             <button
               key={tab.mode}
@@ -61,7 +61,7 @@ export function MediaUploader(props: MediaUploaderProps) {
               disabled={busy}
               onClick={() => onModeChange(tab.mode)}
               className={cn(
-                "cursor-pointer rounded-md px-5 py-1.5 font-poppins text-sm font-medium transition-colors disabled:cursor-not-allowed",
+                "cursor-pointer px-5 py-1.5 font-poppins text-sm font-medium transition-colors disabled:cursor-not-allowed",
                 mode === tab.mode ? "bg-surface text-dash-primary shadow-sm" : "text-dash-muted-fg",
               )}
             >
@@ -78,7 +78,7 @@ export function MediaUploader(props: MediaUploaderProps) {
               value={frameInterval}
               disabled={busy}
               onChange={(e) => onFrameIntervalChange(Number(e.target.value))}
-              className="rounded-md border border-dash-border bg-surface px-2 py-1 text-dash-fg"
+              className=" border border-dash-border bg-surface px-2 py-1 text-dash-fg"
             >
               {scanSettings.frameIntervals.map((seconds) => (
                 <option key={seconds} value={seconds}>
@@ -103,7 +103,7 @@ export function MediaUploader(props: MediaUploaderProps) {
             if (!busy) handleFiles(e.dataTransfer.files);
           }}
           className={cn(
-            "flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed bg-dash-muted/20 p-12 text-center transition-colors hover:border-dash-primary",
+            "flex cursor-pointer flex-col items-center justify-center border-2 border-dashed bg-dash-muted/20 p-12 text-center transition-colors hover:border-dash-primary",
             dragging ? "border-dash-primary" : "border-dash-border",
             busy && "pointer-events-none opacity-60",
           )}

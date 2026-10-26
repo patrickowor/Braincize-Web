@@ -12,7 +12,7 @@ export function AiScanHero() {
       </div>
       <LinkButton
         href="/about"
-        className="h-[2.75rem] w-[13.75rem] rounded-[0.5rem] p-[0.625rem] font-montserrat text-[0.875rem] font-semibold lg:h-[3.5rem] lg:w-[20rem] lg:rounded-[0.75rem] lg:font-poppins lg:text-[1.25rem]"
+        className="h-[2.75rem] w-[13.75rem] p-[0.625rem] font-montserrat text-[0.875rem] font-semibold lg:h-[3.5rem] lg:w-[20rem] lg:font-poppins lg:text-[1.25rem]"
       >
         Learn More
       </LinkButton>

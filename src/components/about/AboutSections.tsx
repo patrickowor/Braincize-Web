@@ -15,7 +15,7 @@ export function AboutHero() {
         <h1 className="font-poppins text-[1.5rem] leading-[normal] font-semibold text-ink lg:text-[3rem] lg:font-bold lg:text-navy">
           {aboutHero.title}
         </h1>
-        <div className={`${photo} h-[22.9375rem] w-[22.25rem] rounded-[1.03494rem] lg:hidden`}>
+        <div className={`${photo} h-[22.9375rem] w-[22.25rem] lg:hidden`}>
           <div className="absolute inset-x-0 top-[-11.82%] h-[141.79%]">
             <Image src="/images/home/founder.png" alt="Dr. Calvin H. Flowers" fill unoptimized className="object-cover" />
           </div>
@@ -36,7 +36,7 @@ export function AboutHero() {
         </Link>
       </div>
 
-      <div className={`${photo} hidden h-[35.5rem] w-[30.4375rem] rounded-[1.5rem] lg:block`}>
+      <div className={`${photo} hidden h-[35.5rem] w-[30.4375rem] lg:block`}>
         <Image src="/images/home/founder.png" alt="Dr. Calvin H. Flowers" fill unoptimized className="object-cover" />
       </div>
     </section>
@@ -55,7 +55,7 @@ export function MissionSection() {
       <div className="relative flex flex-col gap-[1.625rem] lg:-ml-[1.125rem] lg:flex-row lg:items-end lg:gap-[4.375rem] lg:opacity-90">
         <div className="flex flex-col gap-[0.625rem] lg:contents">
           <h2 className="font-poppins text-[1.5rem] leading-[normal] font-semibold text-ink lg:hidden">{mission.title}</h2>
-          <div className="relative h-[13.70106rem] w-[22.25rem] overflow-clip bg-sky/50 lg:h-[44.9375rem] lg:w-[31.9375rem] lg:shrink-0 lg:rounded-[1.5rem] lg:bg-[#d9d9d9]">
+          <div className="relative h-[13.70106rem] w-[22.25rem] overflow-clip bg-sky/50 lg:h-[44.9375rem] lg:w-[31.9375rem] lg:shrink-0 lg:bg-[#d9d9d9]">
             <Glow
               src="/images/bg/mobile/ellipse-about.svg"
               inset="-74.91% -27.97%"
@@ -119,7 +119,7 @@ export function ResearchFocusSection() {
           className="lg:w-[45.6875rem]"
         />
       </div>
-      <div className="relative hidden h-[37.5rem] w-[31.9375rem] shrink-0 overflow-clip rounded-[1.5rem] bg-[#d9d9d9] lg:block">
+      <div className="relative hidden h-[37.5rem] w-[31.9375rem] shrink-0 overflow-clip bg-[#d9d9d9] lg:block">
         <Image src="/images/about/research-focus.jpg" alt="Researchers working in a lab" fill unoptimized className="object-cover" />
       </div>
     </section>
@@ -129,14 +129,14 @@ export function ResearchFocusSection() {
 /** Desktop-only: not part of the mobile About frame. */
 export function MessageSection() {
   return (
-    <section className="mx-auto hidden w-[56.25rem] flex-col items-center rounded-[0.75rem] px-[1rem] py-[0.5rem] lg:flex">
+    <section className="mx-auto hidden w-[56.25rem] flex-col items-center px-[1rem] py-[0.5rem] lg:flex">
       <h2 className="w-full text-center font-poppins text-[3rem] leading-[normal] font-medium tracking-[-0.018rem] text-ink">
         {founderMessage.title}
       </h2>
       <p className="mt-[2.4375rem] w-full text-center font-poppins text-[1.5rem] leading-[normal] font-medium tracking-[-0.003rem] text-ink opacity-85">
         {founderMessage.body}
       </p>
-      <LinkButton href="/contact" className="mt-[3.3125rem] w-[14.4375rem] rounded-[0.75rem] p-[0.625rem] font-poppins text-[1.5rem] font-semibold">
+      <LinkButton href="/contact" className="mt-[3.3125rem] w-[14.4375rem] p-[0.625rem] font-poppins text-[1.5rem] font-semibold">
         Contact us
       </LinkButton>
     </section>

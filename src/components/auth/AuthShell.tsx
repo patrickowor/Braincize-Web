@@ -28,7 +28,7 @@ export function AuthShell({ heading, blurb, title, children, switchPrompt, switc
         <div aria-hidden className="pointer-events-none absolute -top-[10rem] -left-[10rem] size-[32rem] rounded-full bg-brand/20 blur-[7rem]" />
         <div aria-hidden className="pointer-events-none absolute -right-[10rem] -bottom-[12rem] size-[32rem] rounded-full bg-sky/70 blur-[7rem]" />
 
-        <div className="relative mx-auto grid w-full max-w-[70rem] overflow-hidden rounded-[1.5rem] bg-surface shadow-[0_0.5rem_2rem_0_rgba(24,134,244,0.18)] lg:grid-cols-2">
+        <div className="relative mx-auto grid w-full max-w-[70rem] overflow-hidden bg-surface shadow-[0_0.5rem_2rem_0_rgba(24,134,244,0.18)] lg:grid-cols-2">
           <aside className="relative hidden flex-col justify-center overflow-hidden bg-gradient-to-br from-brand to-[#040a40] p-[3rem] text-white lg:flex">
             <Image src="/images/home/neuroscience.png" alt="" fill unoptimized className="object-cover opacity-20 mix-blend-luminosity" />
             <div className="relative">

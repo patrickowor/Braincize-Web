@@ -25,7 +25,7 @@ export function Field({ label, icon: Icon, className, type, ...props }: FieldPro
           {...props}
           type={isPassword && visible ? "text" : type}
           className={cn(
-            "h-[3rem] w-full rounded-[0.75rem] border border-edge bg-page px-[0.875rem] font-poppins text-[0.9375rem] text-ink transition-shadow outline-none placeholder:text-placeholder focus:border-brand focus:ring-4 focus:ring-brand/20",
+            "h-[3rem] w-full border border-edge bg-page px-[0.875rem] font-poppins text-[0.9375rem] text-ink transition-shadow outline-none placeholder:text-placeholder focus:border-brand focus:ring-4 focus:ring-brand/20",
             Icon && "pl-[2.75rem]",
             isPassword && "pr-[2.75rem]",
           )}
@@ -35,7 +35,7 @@ export function Field({ label, icon: Icon, className, type, ...props }: FieldPro
             type="button"
             onClick={() => setVisible((v) => !v)}
             aria-label={visible ? "Hide password" : "Show password"}
-            className="absolute top-1/2 right-[0.5rem] flex size-[2rem] -translate-y-1/2 cursor-pointer items-center justify-center rounded-[0.5rem] text-ink opacity-60 hover:opacity-100"
+            className="absolute top-1/2 right-[0.5rem] flex size-[2rem] -translate-y-1/2 cursor-pointer items-center justify-center text-ink opacity-60 hover:opacity-100"
           >
             {visible ? <EyeOff className="size-[1.125rem]" aria-hidden /> : <Eye className="size-[1.125rem]" aria-hidden />}
           </button>
@@ -47,7 +47,7 @@ export function Field({ label, icon: Icon, className, type, ...props }: FieldPro
 
 export function FormError({ children }: { children: React.ReactNode }) {
   return (
-    <p role="alert" className="mb-[1rem] rounded-[0.5rem] bg-red-500/10 px-[0.875rem] py-[0.625rem] font-poppins text-[0.875rem] text-red-600 dark:text-red-400">
+    <p role="alert" className="mb-[1rem] bg-red-500/10 px-[0.875rem] py-[0.625rem] font-poppins text-[0.875rem] text-red-600 dark:text-red-400">
       {children}
     </p>
   );
@@ -58,7 +58,7 @@ export function SubmitButton({ pending, children }: { pending: boolean; children
     <button
       type="submit"
       disabled={pending}
-      className="flex h-[3rem] w-full cursor-pointer items-center justify-center gap-[0.5rem] rounded-[0.75rem] bg-brand font-poppins text-[1rem] font-semibold text-white transition-colors hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand disabled:cursor-not-allowed disabled:opacity-60"
+      className="flex h-[3rem] w-full cursor-pointer items-center justify-center gap-[0.5rem] bg-brand font-poppins text-[1rem] font-semibold text-white transition-colors hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand disabled:cursor-not-allowed disabled:opacity-60"
     >
       {pending && <Loader2 className="size-[1.125rem] animate-spin" aria-hidden />}
       {children}
