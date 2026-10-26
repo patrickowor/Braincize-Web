@@ -1,8 +1,10 @@
+import { CheckCircle2 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { SiteShell } from "@/components/layout/SiteShell";
 
 interface AuthShellProps {
-  /** Heading and blurb shown on the dark panel beside the form. */
+  /** Heading and blurb shown on the brand panel beside the form. */
   heading: string;
   blurb: string;
   title: string;
@@ -13,38 +15,51 @@ interface AuthShellProps {
   switchHref: string;
 }
 
-/** Split auth screen from the previous design: photo with an overlay panel, form card on the right. */
+const perks = ["Choose from multiple AI analysis models", "Upload MRI images or a scan video", "Get a severity result for every image"];
+
+/**
+ * Split auth screen: brand panel on the left (desktop only), form on the right.
+ * Uses the site's tokens, so it follows the light/dark theme with the rest of the pages.
+ */
 export function AuthShell({ heading, blurb, title, children, switchPrompt, switchLabel, switchHref }: AuthShellProps) {
   return (
     <SiteShell>
-      <div className="flex min-h-[calc(100vh-4rem)] items-center justify-center bg-[url('/images/home/neuroscience.png')] bg-cover bg-center bg-no-repeat lg:min-h-[52rem]">
-        <div className="hidden flex-1 min-[37.5625rem]:block">
-          <div className="m-[3.125rem] rounded-[0.5rem] bg-[#052142] px-[1.875rem] py-[1.25rem] text-center">
-            <h2 className="mb-[0.9375rem] font-poppins text-[1.875rem] leading-[1.3] font-semibold text-white">{heading}</h2>
-            <p className="font-poppins text-[1.125rem] text-white">{blurb}</p>
-          </div>
-        </div>
+      <section className="relative overflow-clip px-[1rem] py-[1.5rem] lg:px-[4.5625rem] lg:py-[2.5rem]">
+        <div aria-hidden className="pointer-events-none absolute -top-[10rem] -left-[10rem] size-[32rem] rounded-full bg-brand/20 blur-[7rem]" />
+        <div aria-hidden className="pointer-events-none absolute -right-[10rem] -bottom-[12rem] size-[32rem] rounded-full bg-sky/70 blur-[7rem]" />
 
-        <div className="flex w-full flex-1 items-center justify-center self-stretch bg-transparent px-[1.25rem] py-[2.5rem] min-[37.5625rem]:bg-[#f5f6fa] min-[37.5625rem]:max-lg:rounded-l-[0.625rem] lg:rounded-l-[1.875rem]">
-          <div className="w-full max-w-[31.25rem] rounded-[0.5rem] bg-white px-[1.5625rem] py-[1.875rem] shadow-[0_0.25rem_0.75rem_rgba(0,0,0,0.1)]">
-            <h1 className="mb-[1.25rem] font-poppins text-[1.75rem] font-semibold text-[#1a1f4b] max-[60.5rem]:text-center">{title}</h1>
-            {children}
-
-            <div className="mt-[1.25rem] mb-[0.625rem] flex items-center gap-[0.625rem] text-center font-poppins text-[#888]">
-              <span className="h-px flex-1 bg-[#ddd]" />
-              or
-              <span className="h-px flex-1 bg-[#ddd]" />
+        <div className="relative mx-auto grid w-full max-w-[70rem] overflow-hidden rounded-[1.5rem] bg-surface shadow-[0_0.5rem_2rem_0_rgba(24,134,244,0.18)] lg:grid-cols-2">
+          <aside className="relative hidden flex-col justify-center overflow-hidden bg-gradient-to-br from-brand to-[#040a40] p-[3rem] text-white lg:flex">
+            <Image src="/images/home/neuroscience.png" alt="" fill unoptimized className="object-cover opacity-20 mix-blend-luminosity" />
+            <div className="relative">
+              <p className="font-montserrat text-[0.875rem] font-semibold tracking-[0.2em] uppercase opacity-80">Braincize</p>
+              <h2 className="mt-[1rem] font-montserrat text-[2.25rem] leading-[1.2] font-bold">{heading}</h2>
+              <p className="mt-[1rem] font-poppins text-[1.0625rem] leading-[1.6] opacity-90">{blurb}</p>
+              <ul className="mt-[2rem] flex flex-col gap-[0.875rem]">
+                {perks.map((perk) => (
+                  <li key={perk} className="flex items-center gap-[0.75rem] font-poppins text-[0.9375rem]">
+                    <CheckCircle2 className="size-[1.25rem] shrink-0" aria-hidden />
+                    {perk}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <p className="mb-[0.625rem] text-center font-poppins text-[0.9375rem] text-[#555]">{switchPrompt}</p>
-            <Link
-              href={switchHref}
-              className="flex items-center justify-center rounded-[0.25rem] border border-[#3b5998] bg-white p-[0.625rem] font-poppins text-[0.9375rem] text-[#3b5998] hover:border-2 hover:border-black"
-            >
-              {switchLabel}
-            </Link>
+          </aside>
+
+          <div className="flex flex-col justify-center px-[1.5rem] py-[2rem] lg:px-[3.5rem] lg:py-[3rem]">
+            <h1 className="font-montserrat text-[1.75rem] leading-[1.2] font-bold text-navy">{title}</h1>
+            <p className="mt-[0.5rem] mb-[1.5rem] font-poppins text-[0.9375rem] text-ink opacity-70 lg:hidden">{blurb}</p>
+            <div className="mb-[1.5rem] hidden lg:block" />
+            {children}
+            <p className="mt-[1.5rem] text-center font-poppins text-[0.9375rem] text-ink">
+              {switchPrompt}{" "}
+              <Link href={switchHref} className="font-semibold text-brand hover:underline">
+                {switchLabel}
+              </Link>
+            </p>
           </div>
         </div>
-      </div>
+      </section>
     </SiteShell>
   );
 }

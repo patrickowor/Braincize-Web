@@ -62,7 +62,7 @@ export function MediaUploader(props: MediaUploaderProps) {
               onClick={() => onModeChange(tab.mode)}
               className={cn(
                 "cursor-pointer rounded-md px-5 py-1.5 font-poppins text-sm font-medium transition-colors disabled:cursor-not-allowed",
-                mode === tab.mode ? "bg-white text-dash-primary shadow-sm" : "text-dash-muted-fg",
+                mode === tab.mode ? "bg-surface text-dash-primary shadow-sm" : "text-dash-muted-fg",
               )}
             >
               {tab.label}
@@ -78,7 +78,7 @@ export function MediaUploader(props: MediaUploaderProps) {
               value={frameInterval}
               disabled={busy}
               onChange={(e) => onFrameIntervalChange(Number(e.target.value))}
-              className="rounded-md border border-dash-border bg-white px-2 py-1 text-dash-fg"
+              className="rounded-md border border-dash-border bg-surface px-2 py-1 text-dash-fg"
             >
               {scanSettings.frameIntervals.map((seconds) => (
                 <option key={seconds} value={seconds}>

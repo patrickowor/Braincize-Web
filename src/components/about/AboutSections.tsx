@@ -46,7 +46,7 @@ export function AboutHero() {
 /** Mobile: stacked title, image band, copy. Desktop: image left, copy right on a translucent band. */
 export function MissionSection() {
   return (
-    <section className="relative lg:flex lg:h-[55.4375rem] lg:items-center lg:justify-center lg:overflow-clip lg:bg-[rgba(202,228,255,0.5)]">
+    <section className="relative lg:flex lg:h-[55.4375rem] lg:items-center lg:justify-center lg:overflow-clip lg:bg-sky/50">
       <Glow
         src="/images/bg/ellipse-about-2.svg"
         inset="-74.91% -27.97%"
@@ -55,7 +55,7 @@ export function MissionSection() {
       <div className="relative flex flex-col gap-[1.625rem] lg:-ml-[1.125rem] lg:flex-row lg:items-end lg:gap-[4.375rem] lg:opacity-90">
         <div className="flex flex-col gap-[0.625rem] lg:contents">
           <h2 className="font-poppins text-[1.5rem] leading-[normal] font-semibold text-ink lg:hidden">{mission.title}</h2>
-          <div className="relative h-[13.70106rem] w-[22.25rem] overflow-clip bg-[rgba(202,228,255,0.5)] lg:h-[44.9375rem] lg:w-[31.9375rem] lg:shrink-0 lg:rounded-[1.5rem] lg:bg-[#d9d9d9]">
+          <div className="relative h-[13.70106rem] w-[22.25rem] overflow-clip bg-sky/50 lg:h-[44.9375rem] lg:w-[31.9375rem] lg:shrink-0 lg:rounded-[1.5rem] lg:bg-[#d9d9d9]">
             <Glow
               src="/images/bg/mobile/ellipse-about.svg"
               inset="-74.91% -27.97%"
@@ -100,7 +100,7 @@ export function ResearchFocusSection() {
             <span className="lg:hidden">{researchFocus.mobileTitle}</span>
             <span className="hidden lg:inline">{researchFocus.title}</span>
           </h2>
-          <div className="relative h-[13.70106rem] w-[22.25rem] overflow-clip bg-[rgba(202,228,255,0.5)] lg:hidden">
+          <div className="relative h-[13.70106rem] w-[22.25rem] overflow-clip bg-sky/50 lg:hidden">
             <Glow
               src="/images/bg/mobile/ellipse-about.svg"
               inset="-74.91% -27.97%"

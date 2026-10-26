@@ -11,7 +11,7 @@ export function Hero() {
     <section className="relative overflow-clip max-lg:pt-[0.6875rem] lg:h-[55.1875rem] lg:bg-sky">
       <div className="mx-auto flex flex-col items-center gap-[1rem] lg:relative lg:block lg:h-full lg:w-[90rem]">
         <div className="flex w-full flex-col items-end gap-[1.25rem] lg:contents">
-          <div className="flex w-[23.375rem] max-w-full flex-col items-center gap-[0.5rem] bg-white lg:absolute lg:z-10 lg:top-[13.5rem] lg:left-[4.5625rem] lg:w-[42rem] lg:items-start lg:gap-[1rem] lg:bg-transparent">
+          <div className="flex w-[23.375rem] max-w-full flex-col items-center gap-[0.5rem] bg-surface lg:absolute lg:z-10 lg:top-[13.5rem] lg:left-[4.5625rem] lg:w-[42rem] lg:items-start lg:gap-[1rem] lg:bg-transparent">
             <h1 className="w-[22.375rem] max-w-full font-montserrat text-[1.875rem] leading-[2.25rem] font-bold tracking-[0.0375rem] text-navy [text-shadow:0_0.25rem_0.25rem_rgba(0,0,0,0.25)] lg:w-auto lg:text-[4.5rem] lg:whitespace-nowrap lg:leading-[5.5rem] lg:tracking-[0.18rem] lg:[text-shadow:none]">
               AI-Powered Brain
               <br />

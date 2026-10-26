@@ -4,23 +4,78 @@
  * Design tokens taken from the BRAINCIZE Figma file.
  * Desktop frames are 1440px wide, mobile frames 390px.
  */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Colours that change with the theme are CSS variables; the `@theme` tokens below point at them,
+ * so components use one class (`bg-surface`, `text-ink`) and never branch on the theme.
+ * The light values are the Figma ones. Dark values are derived from them (navy -> near-white text,
+ * white cards -> raised navy surfaces); brand blue stays the same in both themes.
+ */
+:root {
+  --c-ink: rgba(4, 10, 64, 0.85);
+  --c-navy: #040a40;
+  --c-page: #f5f5f5;
+  --c-sky: #cae4ff;
+  --c-surface: #ffffff;
+  --c-ink-faint: rgba(4, 10, 64, 0.4);
+  --c-line: rgba(4, 10, 64, 0.5);
+  --c-edge: rgba(4, 10, 64, 0.15);
+  --c-placeholder: #5d666f;
+
+  --c-dash-fg: hsl(215 25% 27%);
+  --c-dash-muted: hsl(220 13% 95%);
+  --c-dash-muted-fg: hsl(215 16% 47%);
+  --c-dash-primary: hsl(221 83% 53%);
+  --c-dash-accent: hsl(213 94% 68%);
+  --c-dash-secondary: hsl(215 20% 65%);
+  --c-dash-border: hsl(220 13% 91%);
+  --c-dash-destructive: hsl(0 84% 60%);
+}
+
+.dark {
+  color-scheme: dark;
+  --c-ink: rgba(232, 238, 255, 0.88);
+  --c-navy: #f2f5ff;
+  --c-page: #0a0f24;
+  --c-sky: #12294d;
+  --c-surface: #131a36;
+  --c-ink-faint: rgba(232, 238, 255, 0.45);
+  --c-line: rgba(232, 238, 255, 0.35);
+  --c-edge: rgba(232, 238, 255, 0.16);
+  --c-placeholder: #8c96b4;
+
+  --c-dash-fg: hsl(220 30% 90%);
+  --c-dash-muted: hsl(226 38% 17%);
+  --c-dash-muted-fg: hsl(220 15% 68%);
+  --c-dash-primary: hsl(217 91% 60%);
+  --c-dash-accent: hsl(213 94% 68%);
+  --c-dash-secondary: hsl(220 18% 45%);
+  --c-dash-border: hsl(226 30% 24%);
+  --c-dash-destructive: hsl(0 84% 66%);
+}
+
 @theme inline {
   --color-brand: #1886f4;
-  --color-navy: #040a40;
-  --color-ink: rgba(4, 10, 64, 0.85);
-  --color-page: #f5f5f5;
-  --color-sky: #cae4ff;
+  --color-navy: var(--c-navy);
+  --color-ink: var(--c-ink);
+  --color-ink-faint: var(--c-ink-faint);
+  --color-line: var(--c-line);
+  --color-edge: var(--c-edge);
+  --color-placeholder: var(--c-placeholder);
+  --color-page: var(--c-page);
+  --color-sky: var(--c-sky);
+  --color-surface: var(--c-surface);
   --color-star: #ffc233;
 
-  /* Dashboard palette, carried over from the previous dashboard.css (light theme). */
-  --color-dash-fg: hsl(215 25% 27%);
-  --color-dash-muted: hsl(220 13% 95%);
-  --color-dash-muted-fg: hsl(215 16% 47%);
-  --color-dash-primary: hsl(221 83% 53%);
-  --color-dash-accent: hsl(213 94% 68%);
-  --color-dash-secondary: hsl(215 20% 65%);
-  --color-dash-border: hsl(220 13% 91%);
-  --color-dash-destructive: hsl(0 84% 60%);
+  --color-dash-fg: var(--c-dash-fg);
+  --color-dash-muted: var(--c-dash-muted);
+  --color-dash-muted-fg: var(--c-dash-muted-fg);
+  --color-dash-primary: var(--c-dash-primary);
+  --color-dash-accent: var(--c-dash-accent);
+  --color-dash-secondary: var(--c-dash-secondary);
+  --color-dash-border: var(--c-dash-border);
+  --color-dash-destructive: var(--c-dash-destructive);
   --shadow-dash-elevated: 0 10px 15px -3px hsl(221 39% 11% / 0.1), 0 4px 6px -2px hsl(221 39% 11% / 0.05);
 
   --font-poppins: var(--font-poppins-src), ui-sans-serif, system-ui, sans-serif;
@@ -32,12 +87,13 @@
  * Fluid desktop scaling.
  * Layouts are authored in rem against the 1440px frame (1rem = 16px = 1 / 90 of 1440).
  * From 1024px up the root size follows the viewport, so the page is pixel-exact at 1440
- * and scales proportionally below it. Above 1440 it stops growing and the content is centred.
+ * and scales proportionally below it. It stops growing at 15px (1350px wide) and the content is centred;
+ * 15px rather than 16px keeps type compact on laptops.
  * Under 1024px the mobile layout runs at the normal 16px root.
  */
 @media (min-width: 1024px) {
   html {
-    font-size: clamp(12px, calc(100vw / 90), 16px);
+    font-size: clamp(12px, calc(100vw / 90), 15px);
   }
 }
 

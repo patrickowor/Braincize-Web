@@ -7,6 +7,7 @@ import { useState } from "react";
 import { authLinks, mainNav } from "@/config/site";
 import { cn } from "@/lib/cn";
 import { Icon } from "@/components/ui/Icon";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { useAuth } from "@/providers/AuthProvider";
 
 export type HeaderVariant = "home" | "default";
@@ -22,7 +23,7 @@ const chevron = {
   rotate: "rotate(-90deg) scaleY(-1)",
 };
 
-const button = "flex h-[3rem] items-center justify-center rounded-[0.75rem] px-[1.5rem] text-[1.125rem] whitespace-nowrap";
+const button = "flex h-[2.5rem] items-center justify-center rounded-[0.625rem] px-[1.25rem] text-[1rem] whitespace-nowrap";
 
 /**
  * Site header. The Figma frames disagreed on position and type per page, so there is one layout now:
@@ -42,13 +43,13 @@ export function SiteHeader({ variant = "default" }: { variant?: HeaderVariant })
   return (
     <header className={cn("relative z-20", home && "lg:absolute lg:inset-x-0 lg:top-0")}>
       {/* Desktop */}
-      <div className="mx-auto hidden w-[90rem] items-center justify-between px-[4.5625rem] py-[0.5rem] lg:flex">
-        <Link href="/" className="relative block h-[5.5rem] w-[6.875rem] shrink-0" aria-label="Braincize home">
-          <Image src="/images/shared/logo.png" alt="Braincize" fill unoptimized className="object-cover" priority />
+      <div className="mx-auto hidden w-[90rem] items-center justify-between px-[4.5625rem] py-[0.25rem] lg:flex">
+        <Link href="/" className="relative block h-[4rem] w-[5rem] shrink-0" aria-label="Braincize home">
+          <Image src="/images/shared/logo.png" alt="Braincize" fill unoptimized className="scale-[1.6] object-cover" priority />
         </Link>
 
-        <div className="flex items-center gap-[2.5rem]">
-          <nav aria-label="Main" className="flex items-center gap-[1.75rem]">
+        <div className="flex items-center gap-[1.5rem]">
+          <nav aria-label="Main" className="flex items-center gap-[1rem]">
             {mainNav.map((item) => {
               const active = isActive(pathname, item.href);
               return (
@@ -57,7 +58,7 @@ export function SiteHeader({ variant = "default" }: { variant?: HeaderVariant })
                   href={item.href}
                   aria-current={active ? "page" : undefined}
                   className={cn(
-                    "flex items-center justify-center rounded-[0.75rem] p-[0.75rem] text-[1.25rem] whitespace-nowrap text-ink",
+                    "flex items-center justify-center rounded-[0.75rem] px-[0.625rem] py-[0.375rem] text-[1rem] whitespace-nowrap text-ink",
                     font,
                     home ? (active ? "font-semibold" : "font-medium opacity-50") : !active && "opacity-50",
                   )}
@@ -75,7 +76,8 @@ export function SiteHeader({ variant = "default" }: { variant?: HeaderVariant })
             })}
           </nav>
 
-          <div className="flex items-center gap-[1.25rem]">
+          <div className="flex items-center gap-[0.75rem]">
+            <ThemeToggle />
             {signedIn ? (
               <>
                 <button
@@ -107,34 +109,36 @@ export function SiteHeader({ variant = "default" }: { variant?: HeaderVariant })
 
       {/* Mobile */}
       <div className="lg:hidden">
-        <div className="mx-auto flex w-[22.875rem] max-w-full items-center justify-between pt-[0.5rem]">
-          <Link href="/" className="relative block h-[3.55019rem] w-[4.4375rem]" aria-label="Braincize home">
-            <Image src="/images/shared/logo.png" alt="Braincize" fill unoptimized className="object-cover" priority />
+        <div className="mx-auto flex w-[22.875rem] max-w-full items-center justify-between pt-[0.25rem]">
+          <Link href="/" className="relative block h-[3rem] w-[3.75rem]" aria-label="Braincize home">
+            <Image src="/images/shared/logo.png" alt="Braincize" fill unoptimized className="scale-[1.6] object-cover" priority />
           </Link>
-          <Link
-            href={signedIn ? "/dashboard" : authLinks.signup}
-            className="flex items-center justify-center rounded-[0.5rem] bg-brand p-[0.625rem] font-poppins text-[0.875rem] font-semibold text-white"
-          >
-            {signedIn ? "Dashboard" : "Sign up"}
-          </Link>
+          <div className="flex items-center gap-[0.5rem]">
+            <ThemeToggle className="size-[2.25rem]" />
+            <Link
+              href={signedIn ? "/dashboard" : authLinks.signup}
+              className="flex items-center justify-center rounded-[0.5rem] bg-brand p-[0.5rem] font-poppins text-[0.875rem] font-semibold text-white"
+            >
+              {signedIn ? "Dashboard" : "Sign up"}
+            </Link>
+            <button
+              type="button"
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              onClick={() => setOpen((value) => !value)}
+              className="block size-[1.5rem] cursor-pointer"
+            >
+              <Icon src="/icons/mobile/menu.svg" size={24} boxInset="16.67% 12.5%" />
+            </button>
+          </div>
         </div>
-
-        <button
-          type="button"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          onClick={() => setOpen((value) => !value)}
-          className="mt-[0.75rem] ml-[0.6875rem] block size-[1.5rem] cursor-pointer"
-        >
-          <Icon src="/icons/mobile/menu.svg" size={24} boxInset="16.67% 12.5%" />
-        </button>
 
         {open && (
           <nav
             id="mobile-menu"
             aria-label="Main"
-            className="mx-[1rem] mt-[0.5rem] flex flex-col rounded-[0.5rem] bg-white p-[0.5rem] shadow-[0_0.25rem_0.46875rem_0_rgba(24,134,244,0.1)]"
+            className="mx-[1rem] mt-[0.5rem] flex flex-col rounded-[0.5rem] bg-surface p-[0.5rem] shadow-[0_0.25rem_0.46875rem_0_rgba(24,134,244,0.1)]"
           >
             {mainNav.map((item) => (
               <Link

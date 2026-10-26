@@ -13,7 +13,7 @@ export async function ResearchList({ className }: { className?: string }) {
         <li key={article.id} className="flex flex-col">
           <div className="flex items-start gap-[0.5rem] lg:items-center lg:gap-[1.125rem]">
             <span className="relative mt-[0.1875rem] block size-[0.875rem] shrink-0 lg:mt-0 lg:size-[2rem]">
-              <Image src="/icons/mobile/bullet-research.svg" alt="" fill unoptimized className="lg:hidden" />
+              <Image src="/icons/mobile/bullet-research.svg" alt="" fill unoptimized className="lg:hidden dark:brightness-0 dark:invert" />
               <Image src="/icons/bullet-b.svg" alt="" fill unoptimized className="hidden lg:block" />
             </span>
             <h2 className="font-poppins text-[1rem] leading-[1.25rem] font-medium tracking-[-0.0002rem] text-ink uppercase opacity-85 lg:max-w-[72.75rem] lg:text-[1.375rem] lg:leading-[1.5] lg:tracking-[-0.00275rem] lg:normal-case">

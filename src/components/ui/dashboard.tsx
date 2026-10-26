@@ -2,7 +2,7 @@ import { cn } from "@/lib/cn";
 
 /** Card, badge and progress bar in the previous dashboard's visual language. */
 export function Card({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn("rounded-lg border border-dash-border bg-white text-dash-fg shadow-sm", className)} {...props} />;
+  return <div className={cn("rounded-lg border border-dash-border bg-surface text-dash-fg shadow-sm", className)} {...props} />;
 }
 
 const badgeVariants = {
@@ -56,7 +56,7 @@ export function DashButton({
       className={cn(
         "inline-flex h-10 cursor-pointer items-center justify-center gap-2 rounded-md px-4 py-2 font-poppins text-sm font-medium whitespace-nowrap transition-opacity disabled:pointer-events-none disabled:opacity-50",
         variant === "primary" && "bg-gradient-to-r from-dash-primary to-dash-accent text-white hover:opacity-90",
-        variant === "outline" && "border border-dash-border bg-white text-dash-fg hover:bg-dash-muted",
+        variant === "outline" && "border border-dash-border bg-surface text-dash-fg hover:bg-dash-muted",
         className,
       )}
       {...props}

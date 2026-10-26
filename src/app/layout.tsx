@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
-import { Toaster } from "sonner";
 import { site } from "@/config/site";
 import { AuthProvider } from "@/providers/AuthProvider";
+import { ThemedToaster } from "@/components/ui/ThemedToaster";
+import { ThemeProvider, themeInitScript } from "@/providers/ThemeProvider";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -28,10 +29,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className={`${poppins.variable} ${montserrat.variable} min-h-screen`}>
-        <AuthProvider>{children}</AuthProvider>
-        <Toaster position="top-right" richColors />
+        <ThemeProvider>
+          <AuthProvider>{children}</AuthProvider>
+          <ThemedToaster />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -8,9 +8,9 @@ import { cn } from "@/lib/cn";
 const empty: ContactMessage = { name: "", email: "", address: "", phone: "", message: "" };
 
 const field =
-  "w-full rounded-[0.625rem] bg-white font-poppins font-medium capitalize outline-none placeholder:opacity-50 shadow-[0_0.25rem_1.5625rem_0.3125rem_rgba(4,10,64,0.1)] " +
-  "text-[0.75rem] tracking-[-0.00015rem] placeholder:text-[rgba(4,10,64,0.36)] placeholder:opacity-70 " +
-  "lg:text-[1rem] lg:tracking-normal lg:shadow-[0_0.25rem_0.875rem_0_rgba(0,0,0,0.25)] lg:placeholder:text-[#5d666f] lg:placeholder:opacity-50";
+  "w-full rounded-[0.625rem] bg-surface text-ink font-poppins font-medium capitalize outline-none placeholder:opacity-50 shadow-[0_0.25rem_1.5625rem_0.3125rem_rgba(4,10,64,0.1)] " +
+  "text-[0.75rem] tracking-[-0.00015rem] placeholder:text-ink-faint placeholder:opacity-70 " +
+  "lg:text-[1rem] lg:tracking-normal lg:shadow-[0_0.25rem_0.875rem_0_rgba(0,0,0,0.25)] lg:placeholder:text-placeholder lg:placeholder:opacity-50";
 
 /** Contact form used on the Contact page and below the FAQ on the AI Scan page. */
 export function ContactForm({ className }: { className?: string }) {

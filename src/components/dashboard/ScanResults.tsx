@@ -79,7 +79,7 @@ export function ScanResults({ items, model }: { items: ScanItem[]; model: ScanMo
 
 function Stat({ label, value, tone, small }: { label: string; value: string; tone?: "primary" | "accent"; small?: boolean }) {
   return (
-    <div className="rounded-lg bg-white p-4 text-center">
+    <div className="rounded-lg bg-surface p-4 text-center">
       <p className="mb-1 font-poppins text-sm text-dash-muted-fg">{label}</p>
       <p
         className={`font-poppins font-bold ${small ? "text-lg font-semibold text-dash-fg" : "text-2xl"} ${

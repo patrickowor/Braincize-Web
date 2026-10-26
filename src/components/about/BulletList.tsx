@@ -20,13 +20,13 @@ export function BulletList({ items, bullets, widths, className }: BulletListProp
       {items.map((item, i) => (
         <li key={item} className="flex items-start gap-[0.5rem] lg:items-center lg:gap-[1.125rem]">
           <span className="relative mt-[0.5625rem] block size-[0.875rem] shrink-0 lg:hidden">
-            <Image src="/icons/mobile/bullet-outer.svg" alt="" fill unoptimized />
+            <Image src="/icons/mobile/bullet-outer.svg" alt="" fill unoptimized className="dark:brightness-0 dark:invert" />
             <span className="absolute top-[0.21875rem] left-[0.21875rem] block size-[0.4375rem]">
-              <Image src="/icons/mobile/bullet-inner.svg" alt="" fill unoptimized />
+              <Image src="/icons/mobile/bullet-inner.svg" alt="" fill unoptimized className="dark:brightness-0 dark:invert" />
             </span>
           </span>
           <span className="relative hidden size-[2rem] shrink-0 lg:block">
-            <Image src={`/icons/bullet-${bullets[i] ?? "b"}.svg`} alt="" fill unoptimized />
+            <Image src={`/icons/bullet-${bullets[i] ?? "b"}.svg`} alt="" fill unoptimized className="dark:brightness-0 dark:invert" />
           </span>
           <p
             style={{ "--w": rem(widths[i] ?? 756) } as React.CSSProperties}

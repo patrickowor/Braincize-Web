@@ -2,7 +2,7 @@ import { Glow } from "@/components/ui/Glow";
 
 export function WhatIs() {
   return (
-    <section className="relative h-[12.25rem] overflow-clip bg-white max-lg:mt-[1.42837rem] lg:h-[32rem]">
+    <section className="relative h-[12.25rem] overflow-clip bg-surface max-lg:mt-[1.42837rem] lg:h-[32rem]">
       <Glow
         src="/images/bg/mobile/ellipse-3.svg"
         inset="-76.05% -31.6%"

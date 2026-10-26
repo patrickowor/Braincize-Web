@@ -10,6 +10,9 @@ const flipClass: Record<IconFlip, string> = {
   xy: "-scale-y-100 rotate-180",
 };
 
+/** Exports drawn in the navy text colour; they are turned light in the dark theme. */
+const inkIcon = /bullet|chevron-faq|chevron-nav|home-01|menu/;
+
 export interface IconSpec {
   src: string;
   /** Frame size in design px. */
@@ -32,7 +35,7 @@ export function Icon({ src, size, boxInset, imgInset, flip = "none", rotate, cla
       <span className="relative block overflow-clip" style={{ width: rem(size), height: rem(size) }}>
         <span className="absolute" style={{ inset: boxInset }}>
           <span className="absolute" style={{ inset: imgInset ?? 0 }}>
-            <Image src={src} alt="" fill unoptimized className="block max-w-none" />
+            <Image src={src} alt="" fill unoptimized className={cn("block max-w-none", inkIcon.test(src) && "dark:brightness-0 dark:invert")} />
           </span>
         </span>
       </span>

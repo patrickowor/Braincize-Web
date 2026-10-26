@@ -12,7 +12,7 @@ interface GlowProps {
 /** Decorative blurred ellipse from the Figma frames. */
 export function Glow({ src, inset, className }: GlowProps) {
   return (
-    <div aria-hidden className={cn("pointer-events-none absolute", className)}>
+    <div aria-hidden className={cn("pointer-events-none absolute dark:opacity-25", className)}>
       <div className="absolute" style={{ inset }}>
         <Image src={src} alt="" fill unoptimized className="max-w-none" />
       </div>

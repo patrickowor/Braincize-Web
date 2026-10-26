@@ -4,7 +4,8 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useAsyncAction } from "@/hooks/useAsyncAction";
 import { useAuth } from "@/providers/AuthProvider";
-import { Field, SubmitButton } from "./Field";
+import { Lock, Mail, User } from "lucide-react";
+import { Field, FormError, SubmitButton } from "./Field";
 
 export function SignupForm() {
   const router = useRouter();
@@ -27,16 +28,12 @@ export function SignupForm() {
   return (
     <form onSubmit={onSubmit}>
       <div className="flex gap-[0.9375rem] max-[37.5rem]:flex-col max-[37.5rem]:gap-0">
-        <Field label="First Name" autoComplete="given-name" {...bind("firstName")} />
-        <Field label="Last Name" autoComplete="family-name" {...bind("lastName")} />
+        <Field label="First Name" icon={User} placeholder="First name" autoComplete="given-name" {...bind("firstName")} />
+        <Field label="Last Name" icon={User} placeholder="Last name" autoComplete="family-name" {...bind("lastName")} />
       </div>
-      <Field label="Email Address" type="email" autoComplete="email" {...bind("email")} />
-      <Field label="Password" type="password" autoComplete="new-password" minLength={8} {...bind("password")} />
-      {error && (
-        <p role="alert" className="font-poppins text-[0.875rem] text-[#c0392b]">
-          {error}
-        </p>
-      )}
+      <Field label="Email Address" icon={Mail} placeholder="you@example.com" type="email" autoComplete="email" {...bind("email")} />
+      <Field label="Password" icon={Lock} placeholder="At least 8 characters" type="password" autoComplete="new-password" minLength={8} {...bind("password")} />
+      {error && <FormError>{error}</FormError>}
       <SubmitButton pending={pending}>{pending ? "Creating account…" : "Create Account"}</SubmitButton>
     </form>
   );

@@ -7,7 +7,7 @@ import { Glow } from "@/components/ui/Glow";
 /** Footer composition is fixed in the design, so the columns are placed on the frame. */
 export function SiteFooter() {
   return (
-    <footer className="relative h-[6.4375rem] w-full overflow-clip bg-navy lg:h-[19.625rem]">
+    <footer className="relative h-[6.4375rem] w-full overflow-clip bg-[#040a40] lg:h-[19.625rem]">
       <div className="relative mx-auto h-full w-[24.5625rem] max-w-full lg:w-[90rem]">
         <Glow
           src="/images/bg/mobile/ellipse-1.svg"

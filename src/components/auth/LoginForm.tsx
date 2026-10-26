@@ -4,7 +4,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { useAsyncAction } from "@/hooks/useAsyncAction";
 import { useAuth } from "@/providers/AuthProvider";
-import { Field, SubmitButton } from "./Field";
+import { Lock, User } from "lucide-react";
+import { Field, FormError, SubmitButton } from "./Field";
 
 /** Only same-site paths are honoured, so `?next=` can't send people elsewhere. */
 const safeNext = (next: string | null) => (next && next.startsWith("/") && !next.startsWith("//") ? next : "/dashboard");
@@ -25,20 +26,18 @@ export function LoginForm() {
 
   return (
     <form onSubmit={onSubmit}>
-      <Field label="Username" name="username" autoComplete="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+      <Field label="Username" icon={User} placeholder="Enter your username" name="username" autoComplete="username" value={username} onChange={(e) => setUsername(e.target.value)} />
       <Field
         label="Password"
+        icon={Lock}
+        placeholder="Enter your password"
         name="password"
         type="password"
         autoComplete="current-password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      {error && (
-        <p role="alert" className="font-poppins text-[0.875rem] text-[#c0392b]">
-          {error}
-        </p>
-      )}
+      {error && <FormError>{error}</FormError>}
       <SubmitButton pending={pending}>{pending ? "Logging in…" : "Login"}</SubmitButton>
     </form>
   );
