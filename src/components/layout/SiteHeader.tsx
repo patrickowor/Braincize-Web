@@ -42,8 +42,8 @@ export function SiteHeader({ variant = "default" }: { variant?: HeaderVariant })
   return (
     <header className={cn("relative z-20", home && "lg:absolute lg:inset-x-0 lg:top-0")}>
       {/* Desktop */}
-      <div className="mx-auto hidden w-[90rem] items-center justify-between px-[4.5625rem] pt-[1.9375rem] lg:flex">
-        <Link href="/" className="relative block h-[7.55044rem] w-[9.4375rem] shrink-0" aria-label="Braincize home">
+      <div className="mx-auto hidden w-[90rem] items-center justify-between px-[4.5625rem] py-[0.5rem] lg:flex">
+        <Link href="/" className="relative block h-[5.5rem] w-[6.875rem] shrink-0" aria-label="Braincize home">
           <Image src="/images/shared/logo.png" alt="Braincize" fill unoptimized className="object-cover" priority />
         </Link>
 
@@ -107,7 +107,7 @@ export function SiteHeader({ variant = "default" }: { variant?: HeaderVariant })
 
       {/* Mobile */}
       <div className="lg:hidden">
-        <div className="mx-auto flex w-[22.875rem] max-w-full items-center justify-between pt-[0.875rem]">
+        <div className="mx-auto flex w-[22.875rem] max-w-full items-center justify-between pt-[0.5rem]">
           <Link href="/" className="relative block h-[3.55019rem] w-[4.4375rem]" aria-label="Braincize home">
             <Image src="/images/shared/logo.png" alt="Braincize" fill unoptimized className="object-cover" priority />
           </Link>
