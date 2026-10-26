@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
+import { Toaster } from "sonner";
 import { site } from "@/config/site";
+import { AuthProvider } from "@/providers/AuthProvider";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -27,7 +29,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${montserrat.variable} min-h-screen`}>{children}</body>
+      <body className={`${poppins.variable} ${montserrat.variable} min-h-screen`}>
+        <AuthProvider>{children}</AuthProvider>
+        <Toaster position="top-right" richColors />
+      </body>
     </html>
   );
 }

@@ -12,6 +12,17 @@
   --color-sky: #cae4ff;
   --color-star: #ffc233;
 
+  /* Dashboard palette, carried over from the previous dashboard.css (light theme). */
+  --color-dash-fg: hsl(215 25% 27%);
+  --color-dash-muted: hsl(220 13% 95%);
+  --color-dash-muted-fg: hsl(215 16% 47%);
+  --color-dash-primary: hsl(221 83% 53%);
+  --color-dash-accent: hsl(213 94% 68%);
+  --color-dash-secondary: hsl(215 20% 65%);
+  --color-dash-border: hsl(220 13% 91%);
+  --color-dash-destructive: hsl(0 84% 60%);
+  --shadow-dash-elevated: 0 10px 15px -3px hsl(221 39% 11% / 0.1), 0 4px 6px -2px hsl(221 39% 11% / 0.05);
+
   --font-poppins: var(--font-poppins-src), ui-sans-serif, system-ui, sans-serif;
   --font-montserrat: var(--font-montserrat-src), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-poppins);

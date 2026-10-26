@@ -3,10 +3,6 @@ export interface TermsSection {
   body: string[];
   /** Position on mobile, where "Intellectual Property" comes first. */
   mobileOrder: number;
-  /** Heights from the desktop frame, which carry trailing blank lines. */
-  minHeight: number;
-  /** The last three sections use a narrower text column in the desktop frame. */
-  narrow?: boolean;
 }
 
 export const termsIntro = {
@@ -24,7 +20,6 @@ export const termsSections: TermsSection[] = [
       "All materials on this site — including images, text, logos, documents, downloadable files, and diagnostic tools — are the exclusive property of Dr. Calvin Hubert Flowers, MD. Unauthorized use or distribution is strictly prohibited.",
     ],
     mobileOrder: 0,
-    minHeight: 226,
   },
   {
     title: "Age Restriction",
@@ -32,7 +27,6 @@ export const termsSections: TermsSection[] = [
       "You must be at least 18 years old to use Braincize. By accessing our platform, you confirm that you meet this age requirement. We do not take responsibility for misrepresentation of age.",
     ],
     mobileOrder: 2,
-    minHeight: 180,
   },
   {
     title: "Limitation of Liability",
@@ -40,7 +34,6 @@ export const termsSections: TermsSection[] = [
       "Braincize and its associates (including Dr. Calvin Flowers) are not liable for any damages, losses, or legal claims arising from your use of the site or reliance on its results. The AI analysis is informational and should not replace professional medical consultation.",
     ],
     mobileOrder: 3,
-    minHeight: 212,
   },
   {
     title: "Indemnity",
@@ -48,21 +41,16 @@ export const termsSections: TermsSection[] = [
       "By using this platform, you agree to hold harmless and indemnify Braincize, Dr. Calvin Flowers, and affiliated parties from any legal claims resulting from your use or misuse of the site.",
     ],
     mobileOrder: 4,
-    minHeight: 187,
   },
   {
     title: "Governing Law",
     body: ["These terms are governed by the laws of the State of Illinois, US"],
     mobileOrder: 5,
-    minHeight: 187,
-    narrow: true,
   },
   {
     title: "Severability",
     body: ["If any part of these Terms is found invalid under applicable law, the rest will still apply."],
     mobileOrder: 6,
-    minHeight: 187,
-    narrow: true,
   },
   {
     title: "Updates",
@@ -70,7 +58,5 @@ export const termsSections: TermsSection[] = [
       "These Terms may change periodically to stay compliant with the law or to reflect new features. Major updates will be posted here or shared via email.",
     ],
     mobileOrder: 7,
-    minHeight: 228,
-    narrow: true,
   },
 ];

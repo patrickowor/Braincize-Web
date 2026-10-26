@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: "About us" };
 
 export default function AboutPage() {
   return (
-    <SiteShell headerOffset={{ left: 73, top: 31 }}>
+    <SiteShell>
       <div className="relative overflow-x-clip pb-[6.25rem] lg:pb-[3.875rem]">
         <Glow
           src="/images/bg/ellipse-about-1.svg"

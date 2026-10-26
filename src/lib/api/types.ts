@@ -15,7 +15,6 @@ export interface NewsletterSubscription {
 export interface FaqItem {
   id: string;
   question: string;
-  /** Not present in the Figma file yet, so it stays optional. */
   answer?: string;
 }
 
@@ -25,33 +24,49 @@ export interface ResearchArticle {
   href?: string;
 }
 
+/* ───────────── auth ───────────── */
+
 export interface Credentials {
-  email: string;
+  username: string;
   password: string;
 }
 
-export interface SignupPayload extends Credentials {
-  name: string;
+export interface SignupPayload {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
 }
 
 export interface AuthUser {
   id: string;
   name: string;
-  email: string;
+  email?: string;
 }
 
-export type ScanModelId = "predictMid" | "predictSize" | "predictYolo";
-
-export interface ScanRequest {
-  model: ScanModelId;
-  files: File[];
+export interface AuthSession {
+  token: string;
+  user: AuthUser;
 }
 
-export interface ScanResult {
-  id: string;
-  model: ScanModelId;
-  summary: string;
-  imageUrls: string[];
+/* ───────────── scans ───────────── */
+
+export type ScanModelId = "detect-atrophy" | "measure-atrophy-v1" | "measure-atrophy-yolo";
+
+export type Severity = "Normal" | "Mild" | "Moderate" | "Severe";
+
+/** What the prediction endpoints return: a message plus an optional numeric value. */
+export interface RawScanResponse {
+  message: string;
+  value?: number | string | null;
+}
+
+/** A prediction interpreted for the UI. */
+export interface ScanOutcome {
+  severity: Severity;
+  /** Percentage score reported by the model. */
+  atrophyScore: number;
+  message: string;
 }
 
 export interface AckResponse {

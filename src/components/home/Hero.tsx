@@ -11,15 +11,15 @@ export function Hero() {
     <section className="relative overflow-clip max-lg:pt-[0.6875rem] lg:h-[55.1875rem] lg:bg-sky">
       <div className="mx-auto flex flex-col items-center gap-[1rem] lg:relative lg:block lg:h-full lg:w-[90rem]">
         <div className="flex w-full flex-col items-end gap-[1.25rem] lg:contents">
-          <div className="flex w-[23.375rem] max-w-full flex-col items-center gap-[0.5rem] bg-white lg:absolute lg:z-10 lg:top-[12.92563rem] lg:left-[2.875rem] lg:w-[58.8125rem] lg:items-start lg:gap-[1rem] lg:bg-transparent">
-            <h1 className="w-[22.375rem] max-w-full font-montserrat text-[2.25rem] leading-[2.75rem] font-bold tracking-[0.045rem] text-navy [text-shadow:0_0.25rem_0.25rem_rgba(0,0,0,0.25)] lg:w-auto lg:text-[6rem] lg:whitespace-nowrap lg:leading-[7.5rem] lg:tracking-[0.24rem] lg:[text-shadow:none]">
+          <div className="flex w-[23.375rem] max-w-full flex-col items-center gap-[0.5rem] bg-white lg:absolute lg:z-10 lg:top-[13.5rem] lg:left-[4.5625rem] lg:w-[42rem] lg:items-start lg:gap-[1rem] lg:bg-transparent">
+            <h1 className="w-[22.375rem] max-w-full font-montserrat text-[1.875rem] leading-[2.25rem] font-bold tracking-[0.0375rem] text-navy [text-shadow:0_0.25rem_0.25rem_rgba(0,0,0,0.25)] lg:w-auto lg:text-[4.5rem] lg:whitespace-nowrap lg:leading-[5.5rem] lg:tracking-[0.18rem] lg:[text-shadow:none]">
               AI-Powered Brain
               <br />
               Atrophy
               <br />
               Detection
             </h1>
-            <p className="w-[21.75rem] max-w-full font-poppins text-[1rem] leading-[1.25rem] font-medium tracking-[-0.0002rem] text-ink lg:w-auto lg:text-[2.25rem] lg:leading-[2.925rem] lg:tracking-normal">
+            <p className="w-[21.75rem] max-w-full font-poppins text-[0.9375rem] leading-[1.25rem] font-medium tracking-[-0.0002rem] text-ink lg:w-auto lg:text-[1.75rem] lg:leading-[2.375rem] lg:tracking-normal">
               Achieve over 90% accuracy in detecting brain volume loss with our advanced AI solutions.
             </p>
           </div>
@@ -59,7 +59,7 @@ export function Hero() {
 
         <LinkButton
           href="/aiscan"
-          className="h-[3.375rem] w-[13.75rem] rounded-[0.5rem] p-[0.625rem] font-montserrat text-[0.875rem] font-semibold lg:absolute lg:z-10 lg:top-[45.1875rem] lg:left-[2.875rem] lg:h-[4.9375rem] lg:w-[22.25rem] lg:rounded-[0.75rem] lg:font-poppins lg:text-[1.5rem]"
+          className="h-[3.375rem] w-[13.75rem] rounded-[0.5rem] p-[0.625rem] font-montserrat text-[0.875rem] font-semibold lg:absolute lg:z-10 lg:top-[39rem] lg:left-[4.5625rem] lg:h-[4rem] lg:w-[18.75rem] lg:rounded-[0.75rem] lg:font-poppins lg:text-[1.25rem]"
         >
           <span className="lg:hidden">Explore Our Technology</span>
           <span className="hidden lg:inline">Explore our technology</span>

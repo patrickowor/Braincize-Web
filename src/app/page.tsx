@@ -13,7 +13,7 @@ export default function HomePage() {
     <SiteShell headerVariant="home">
       <Hero />
       <WhatIs />
-      <div className="relative z-10 flex flex-col px-[1rem] max-lg:mt-[5.5rem] max-lg:gap-[3.375rem] max-lg:pb-[5.625rem] lg:px-0 lg:pb-[9.1875rem]">
+      <div className="relative z-10 flex flex-col overflow-x-clip px-[1rem] max-lg:mt-[5.5rem] max-lg:gap-[3.375rem] max-lg:pb-[5.625rem] lg:px-0 lg:pb-[9.1875rem]">
         <KeyFeatures className="lg:mt-[3.625rem]" />
         <Neuroscience className="max-lg:hidden lg:mt-[2.6875rem]" />
         <FounderSpotlight className="max-lg:hidden lg:mt-[9.625rem]" />

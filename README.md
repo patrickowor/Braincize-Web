@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Braincize
 
-## Getting Started
-
-First, run the development server:
+AI-powered brain atrophy detection. Next.js 15 (App Router) · TypeScript · Tailwind CSS v4.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Variable | Default | Purpose |
+| --- | --- | --- |
+| `NEXT_PUBLIC_API_BASE_URL` | `https://braincize.net` | Backend origin |
+| `NEXT_PUBLIC_API_MOCK` | on (anything but `"false"`) | Serve responses from the in-memory mock adapter |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Set `NEXT_PUBLIC_API_MOCK=false` to talk to the real backend.
 
-## Learn More
+## API layer (`src/lib/api`)
 
-To learn more about Next.js, take a look at the following resources:
+Components never call `fetch`. They use `import { api } from "@/lib/api"`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `config.ts` base URL and mock switch
+- `endpoints.ts` **every route in one file**
+- `http.ts` the transport (JSON, FormData, raw binary, auth header, timeouts); swap the adapter to change it
+- `mock.ts` stand-in responses; delete an entry when its real endpoint exists
+- `services/*.service.ts` one file per domain (auth, contact, newsletter, faq, research, scan)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Only the scan endpoints (`/predictmid/`, `/predictsz/`, `/predictyolo`) are confirmed against a live
+backend. Auth, contact, newsletter, FAQ and research are placeholders until their contracts exist.
 
-## Deploy on Vercel
+## App flow
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`/login` → `/dashboard` (pick a project) → `/dashboard/brainscan` (pick a model, upload images or a
+video, analyse). Video is cut into JPEG frames in the browser (`src/lib/video/extractFrames.ts`) and
+each frame is sent like any other image. `/dashboard/**` is gated by `src/middleware.ts` using a
+session cookie; sessions are mocked until the auth API exists.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Add a project in `src/content/projects.ts`; add or edit models in `src/content/scanModels.ts`
+(plus their route in `endpoints.ts`).
+
+## Styling conventions
+
+- Layouts are authored against the Figma frames: **1440px desktop, 390px mobile**.
+- Sizes are `rem` arbitrary values (`w-[23.625rem]` = 378px at 1440). From 1024px up, the root
+  font-size follows the viewport (`clamp(12px, 100vw/90, 16px)` in `globals.css`), so desktop scales
+  proportionally and is exact at 1440. Below 1024px the mobile layout runs at a 16px root.
+- Design tokens (colours, fonts, dashboard palette) live in `@theme` in `globals.css`.
+- Copy lives in `src/content/*`, site-wide constants in `src/config/site.ts`.

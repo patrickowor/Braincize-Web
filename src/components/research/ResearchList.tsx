@@ -2,36 +2,28 @@ import Image from "next/image";
 import Link from "next/link";
 import { api } from "@/lib/api";
 import { cn } from "@/lib/cn";
-import { rem } from "@/lib/rem";
 import { Icon } from "@/components/ui/Icon";
-
-/** Heights of the mobile list rows in the Figma frame; they carry blank lines from the design file. */
-const MOBILE_ROW_HEIGHTS = [95, 73, 72, 72, 64];
 
 export async function ResearchList({ className }: { className?: string }) {
   const articles = await api.research.list();
 
   return (
-    <ul className={cn("flex flex-col gap-[2.75rem] lg:gap-[5.25rem]", className)}>
-      {articles.map((article, index) => (
-        <li
-          key={article.id}
-          style={{ "--row-h": rem(MOBILE_ROW_HEIGHTS[index] ?? 0) } as React.CSSProperties}
-          className="relative flex flex-col max-lg:min-h-(--row-h) max-lg:pb-[0.375rem]"
-        >
-          <div className="relative flex items-start gap-[0.5rem] lg:items-center lg:gap-[1.125rem]">
-            <span className="relative mt-[0.5625rem] block size-[0.875rem] shrink-0 lg:mt-0 lg:size-[2rem]">
+    <ul className={cn("flex flex-col gap-[1.75rem] lg:gap-[3rem]", className)}>
+      {articles.map((article) => (
+        <li key={article.id} className="flex flex-col">
+          <div className="flex items-start gap-[0.5rem] lg:items-center lg:gap-[1.125rem]">
+            <span className="relative mt-[0.1875rem] block size-[0.875rem] shrink-0 lg:mt-0 lg:size-[2rem]">
               <Image src="/icons/mobile/bullet-research.svg" alt="" fill unoptimized className="lg:hidden" />
               <Image src="/icons/bullet-b.svg" alt="" fill unoptimized className="hidden lg:block" />
             </span>
-            <h2 className="w-[20.9375rem] max-w-full font-poppins text-[1rem] leading-[1.25rem] font-medium tracking-[-0.0002rem] text-ink uppercase opacity-85 lg:min-h-[3.75rem] lg:w-[72.75rem] lg:text-[1.5rem] lg:leading-[2.875rem] lg:tracking-[-0.003rem] lg:normal-case">
+            <h2 className="font-poppins text-[1rem] leading-[1.25rem] font-medium tracking-[-0.0002rem] text-ink uppercase opacity-85 lg:max-w-[72.75rem] lg:text-[1.375rem] lg:leading-[1.5] lg:tracking-[-0.00275rem] lg:normal-case">
               {article.title}
             </h2>
           </div>
 
           <Link
             href={article.href ?? "#"}
-            className="mt-[1rem] flex items-center gap-[0.625rem] self-start pl-[1.4375rem] font-poppins text-[0.75rem] leading-[normal] font-medium text-brand max-lg:mt-auto lg:pl-0"
+            className="mt-[0.75rem] flex items-center gap-[0.625rem] self-start pl-[1.375rem] font-poppins text-[0.75rem] leading-[normal] font-medium text-brand lg:mt-[0.75rem] lg:pl-[3.125rem]"
           >
             Read more
             <span className="lg:hidden">
