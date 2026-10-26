@@ -1,87 +1,42 @@
-@import '@fontsource/montserrat';
-@import '@fontsource/poppins';
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/*
+ * Design tokens taken from the BRAINCIZE Figma file.
+ * Desktop frames are 1440px wide, mobile frames 390px.
+ */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand: #1886f4;
+  --color-navy: #040a40;
+  --color-ink: rgba(4, 10, 64, 0.85);
+  --color-page: #f5f5f5;
+  --color-sky: #cae4ff;
+  --color-star: #ffc233;
+
+  --font-poppins: var(--font-poppins-src), ui-sans-serif, system-ui, sans-serif;
+  --font-montserrat: var(--font-montserrat-src), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-poppins);
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/*
+ * Fluid desktop scaling.
+ * Layouts are authored in rem against the 1440px frame (1rem = 16px = 1 / 90 of 1440).
+ * From 1024px up the root size follows the viewport, so the page is pixel-exact at 1440
+ * and scales proportionally below it. Above 1440 it stops growing and the content is centred.
+ * Under 1024px the mobile layout runs at the normal 16px root.
+ */
+@media (min-width: 1024px) {
+  html {
+    font-size: clamp(12px, calc(100vw / 90), 16px);
   }
-} */
-
-
-/* my font families */
-.fnt-monserat {
-  font-family: 'Montserrat';
 }
-.fnt-poppins {
-  font-family: 'Poppins';
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-  overflow-x: hidden !important;
-}
-
-.signup-btn {
-  @apply inline-block px-4 py-1 text-white  rounded-md  transition-colors duration-200 shadow;
-}
-@media (min-width: 1441px) {
-  body {
-    margin-inline: 10%;
-    background-color: #cee5fdf5;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* exclusive to small screens  */
-@media (max-width: 599.9px){
-
-}
-
-
-/* Tablet (≥ 600px) */
-@media (min-width: 600px) {
-
-}
-
-/* Small Desktop (≥ 768px) */
-@media (min-width: 768px) {
-
-}
-
-/* Medium Desktop (≥ 992px) */
-@media (min-width: 992px) {
-
-}
-
-/* Large Desktop (≥ 1200px) */
-@media (min-width: 1200px) {
-
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-poppins);
+  -webkit-font-smoothing: antialiased;
 }

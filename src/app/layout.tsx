@@ -1,22 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat, Poppins } from "next/font/google";
+import { site } from "@/config/site";
 import "./globals.css";
-import Footer from "@/shared/components/Footer";
-import Header from "@/shared/components/Header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
+  variable: "--font-poppins-src",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const montserrat = Montserrat({
+  variable: "--font-montserrat-src",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Braincize",
-  description: "The Braincize Project",
+  title: { default: site.name, template: `%s | ${site.name}` },
+  description: site.description,
 };
 
 export default function RootLayout({
@@ -25,14 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Header/>
-        {children}
-        <Footer />
-      </body>
+    <html lang="en">
+      <body className={`${poppins.variable} ${montserrat.variable} min-h-screen`}>{children}</body>
     </html>
   );
 }
