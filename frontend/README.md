@@ -10,35 +10,50 @@ npm run build
 
 ## Environment
 
+All configuration lives in `.env.local` (copy `.env.example`, which lists every variable with its default).
+It is read in one place, `src/config/env.ts`. Restart `next dev` after changing it.
+
 | Variable | Default | Purpose |
 | --- | --- | --- |
-| `NEXT_PUBLIC_API_BASE_URL` | `https://braincize.net` | Backend origin |
-| `NEXT_PUBLIC_API_MOCK` | on (anything but `"false"`) | Serve responses from the in-memory mock adapter |
-
-Set `NEXT_PUBLIC_API_MOCK=false` to talk to the real backend.
+| `NEXT_PUBLIC_API_BASE_URL` | `http://localhost:3001` | Backend origin (the gateway in `backend/gateway`) |
+| `NEXT_PUBLIC_SOCKET_URL` | the API origin | Websocket origin for live results |
+| `NEXT_PUBLIC_API_TIMEOUT_MS` | `30000` | Per-request timeout, uploads included |
+| `NEXT_PUBLIC_API_MOCK` | `false` | `true` runs without a backend, with canned responses |
+| `NEXT_PUBLIC_UPLOAD_BATCH_SIZE` | `10` | Files per upload request; bigger sets are split |
+| `NEXT_PUBLIC_SCAN_POLL_MS` | `5000` | Safety-net refresh of a running scan |
+| `NEXT_PUBLIC_FRAME_INTERVALS` | `0.5,1,2,5` | Seconds-between-frames choices for video |
+| `NEXT_PUBLIC_DEFAULT_FRAME_INTERVAL` | `1` | Preselected choice |
+| `NEXT_PUBLIC_MAX_FRAMES` | `60` | Most frames taken from one video |
+| `NEXT_PUBLIC_MAX_FRAME_WIDTH` | `1280` | Wider frames are scaled down before upload |
 
 ## API layer (`src/lib/api`)
 
 Components never call `fetch`. They use `import { api } from "@/lib/api"`.
 
-- `config.ts` base URL and mock switch
+- `config.ts` base URL, timeout and mock switch (from `src/config/env.ts`)
 - `endpoints.ts` **every route in one file**
-- `http.ts` the transport (JSON, FormData, raw binary, auth header, timeouts); swap the adapter to change it
-- `mock.ts` stand-in responses; delete an entry when its real endpoint exists
-- `services/*.service.ts` one file per domain (auth, contact, newsletter, faq, research, scan)
+- `http.ts` the transport (JSON, FormData, auth header, timeouts); swap the adapter to change it
+- `mock.ts` stand-in responses for `NEXT_PUBLIC_API_MOCK=true`
+- `services/*.service.ts` one file per domain (auth, catalog, scan, contact, newsletter, faq, research)
 
-Only the scan endpoints (`/predictmid/`, `/predictsz/`, `/predictyolo`) are confirmed against a live
-backend. Auth, contact, newsletter, FAQ and research are placeholders until their contracts exist.
+`src/lib/realtime` follows an uploaded batch over the backend's websocket (`scanTracker.ts`), with a
+mock twin for mock mode. The public FAQ and research lists fall back to the copy in `src/content` if the
+backend can't be reached, so those pages still build and render.
 
 ## App flow
 
-`/login` → `/dashboard` (pick a project) → `/dashboard/brainscan` (pick a model, upload images or a
-video, analyse). Video is cut into JPEG frames in the browser (`src/lib/video/extractFrames.ts`) and
-each frame is sent like any other image. `/dashboard/**` is gated by `src/middleware.ts` using a
-session cookie; sessions are mocked until the auth API exists.
+`/login` → `/dashboard` → `/dashboard/<category>` (e.g. `brainscan`).
 
-Add a project in `src/content/projects.ts`; add or edit models in `src/content/scanModels.ts`
-(plus their route in `endpoints.ts`).
+- The dashboard lists the backend's **categories**; a category with no models is shown as "Coming soon".
+- A category page lists its **models**, takes images (or a video, cut into JPEG frames in the browser by
+  `src/lib/video/extractFrames.ts`), and sends them to the chosen model. The file types offered come from the
+  model's `accepts`; video is only offered when the model takes JPEG.
+- Upload is split into groups of `NEXT_PUBLIC_UPLOAD_BATCH_SIZE`. The backend answers once they are queued,
+  then each result arrives over the websocket and fills in its row.
+
+Projects, models and their descriptions are no longer in this repo: add or change them in the backend
+(see `backend/gateway/README.md`, "Models and categories"). `/dashboard/**` is gated by `src/middleware.ts`
+using the session cookie.
 
 ## Styling conventions
 
