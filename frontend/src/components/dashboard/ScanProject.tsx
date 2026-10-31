@@ -137,14 +137,17 @@ function ScanWorkspace({ category }: { category: CategoryDetail }) {
   async function analyze() {
     if (!model) return toast.error("Please select a model first");
     if (!items.length) return toast.error("Please upload images first");
-    const unsupported = items.filter((item) => !model.accepts.includes(item.file.type));
+    // Images that already have a result are kept as they are; only new (or failed) ones are sent.
+    const batchItems = items.filter((item) => item.status !== "complete");
+    if (!batchItems.length) return toast.info("All images have already been analyzed.");
+    const unsupported = batchItems.filter((item) => !model.accepts.includes(item.file.type));
     if (unsupported.length) {
       return toast.error(
         `${model.name} takes ${describeTypes(model.accepts)} only. Remove ${unsupported.length} file(s) or pick another model.`,
       );
     }
 
-    const batchItems = items;
+    const pendingIds = new Set(batchItems.map((item) => item.id));
     const finished = new Set<string>();
     const patch = (id: string, change: Partial<ScanItem>) =>
       setItems((current) => current.map((item) => (item.id === id ? { ...item, ...change } : item)));
@@ -172,7 +175,9 @@ function ScanWorkspace({ category }: { category: CategoryDetail }) {
 
     setAnalyzing(true);
     setProgress(0);
-    setItems((current) => current.map((item) => ({ ...item, status: "analyzing", outcome: undefined, error: undefined })));
+    setItems((current) =>
+      current.map((item) => (pendingIds.has(item.id) ? { ...item, status: "analyzing", outcome: undefined, error: undefined } : item)),
+    );
 
     try {
       // Upload one group at a time; each group's results are followed in parallel with the next upload.

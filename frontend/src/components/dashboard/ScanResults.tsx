@@ -26,7 +26,7 @@ export function ScanResults({ items, model }: { items: ScanItem[]; model: ScanMo
           <h3 className="mb-4 font-poppins font-semibold text-dash-fg">Overall Summary</h3>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
             <Stat label="Images Analyzed" value={String(done.length)} tone="primary" />
-            <Stat label="Avg. Atrophy Score" value={average === null ? "—" : `${average.toFixed(1)}%`} tone="accent" />
+            <Stat label="Avg. Atrophy Score" value={average === null ? "—" : `${average.toFixed(1)} mm²`} tone="accent" />
             <Stat label="Model Used" value={model ? [model.name, model.version].filter(Boolean).join(" · ") : "—"} small />
           </div>
         </Card>
@@ -65,7 +65,7 @@ export function ScanResults({ items, model }: { items: ScanItem[]; model: ScanMo
                   {item.status === "complete" && item.outcome?.atrophyScore != null && (
                     <div className="mt-4">
                       <p className="mb-1 font-poppins text-sm text-dash-muted-fg">Atrophy Score</p>
-                      <p className="font-poppins text-lg font-semibold text-dash-fg">{item.outcome.atrophyScore.toFixed(1)}%</p>
+                      <p className="font-poppins text-lg font-semibold text-dash-fg">{item.outcome.atrophyScore.toFixed(1)} mm²</p>
                     </div>
                   )}
                 </div>
